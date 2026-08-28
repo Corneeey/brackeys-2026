@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b5xldglsskp0p"]
+
+[ext_resource type="Script" uid="uid://il12x6qoojtf" path="res://scenes/dirt.gd" id="1_elwhm"]
+[ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="2_5kli6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6wr7"]
+size = Vector2(122.42557, 111.27672)
+
+[node name="Dirt" type="Area2D" unique_id=1317732654]
+script = ExtResource("1_elwhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855082192]
+position = Vector2(-1.717162, -1.0031374)
+shape = SubResource("RectangleShape2D_t6wr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=28462525]
+position = Vector2(1.717162, 27.380503)
+scale = Vector2(1, 1.4121463)
+texture = ExtResource("2_5kli6")
