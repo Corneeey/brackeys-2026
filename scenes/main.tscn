@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://bjaldegriam12"]
 
+[ext_resource type="PackedScene" uid="uid://d15otiv7naa7r" path="res://scenes/sheep.tscn" id="1_o5qli"]
+
 [node name="Main" type="Node" unique_id=105591987]
+
+[node name="Sprite2D" parent="." unique_id=196554312 instance=ExtResource("1_o5qli")]
+position = Vector2(575, 319)

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d15otiv7naa7r"]
+
+[ext_resource type="Texture2D" uid="uid://csofgnm4jkmyt" path="res://assets/sheep.jpg" id="1_t8l8v"]
+[ext_resource type="Script" uid="uid://scyn2qylqglk" path="res://scenes/sheep.gd" id="2_gw4f6"]
+[ext_resource type="Script" uid="uid://il12x6qoojtf" path="res://scenes/dirt.gd" id="3_6qn06"]
+[ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="4_55m3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6wr7"]
+size = Vector2(122.42557, 111.27672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbo3h"]
+size = Vector2(535.4606, 324.06918)
+
+[node name="Sheep" type="Sprite2D" unique_id=196554312]
+scale = Vector2(1.9161074, 1.3361344)
+texture = ExtResource("1_t8l8v")
+script = ExtResource("2_gw4f6")
+
+[node name="Dirt" type="Area2D" parent="." unique_id=303636856]
+script = ExtResource("3_6qn06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt" unique_id=536060237]
+position = Vector2(-1.717162, -1.0031374)
+shape = SubResource("RectangleShape2D_t6wr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dirt/CollisionShape2D" unique_id=1893827804]
+position = Vector2(1.717162, 27.380503)
+scale = Vector2(1, 1.4121463)
+texture = ExtResource("4_55m3e")
+
+[node name="SheepBody" type="Area2D" parent="." unique_id=1520218605]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SheepBody" unique_id=1853946010]
+position = Vector2(-4.1751313, -27.317616)
+shape = SubResource("RectangleShape2D_vbo3h")
+
+[connection signal="mouse_entered" from="Dirt" to="." method="_on_dirt_mouse_entered"]
+[connection signal="mouse_entered" from="SheepBody" to="." method="_on_sheep_body_mouse_entered"]
+[connection signal="mouse_exited" from="SheepBody" to="." method="_on_sheep_body_mouse_exited"]
