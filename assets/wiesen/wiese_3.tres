@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WiesenData" format=3 uid="uid://us2fgdlu1ru5"]
+
+[ext_resource type="Script" uid="uid://co02ldvveil3d" path="res://types/wiesen_data.gd" id="1_2ahws"]
+
+[resource]
+script = ExtResource("1_2ahws")
+sheep_count = 5
+metadata/_custom_type_script = "uid://co02ldvveil3d"

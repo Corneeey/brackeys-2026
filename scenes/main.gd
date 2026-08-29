@@ -5,8 +5,9 @@ const MINIGAME_SCENE = preload("uid://bo8bqu8f3i8lc")
 
 var game_steps = [
 	preload("res://assets/dialogue/dialogue_1.dialogue"),
-	"Minigame",
-	preload("res://assets/dialogue/test.dialogue")
+	preload("res://assets/wiesen/wiese_1.tres"),
+	preload("res://assets/dialogue/test.dialogue"),
+	preload("res://assets/wiesen/wiese_2.tres")
 ]
 
 func load_next() -> void:
@@ -14,8 +15,8 @@ func load_next() -> void:
 	
 	if next is DialogueResource:
 		load_dialogue(next)
-	elif next == "Minigame":
-		load_minigame()
+	elif next is WiesenData:
+		load_minigame(next)
 	else: push_error("Can't load next: " + next)
 
 func load_dialogue(dialogue_resource: DialogueResource) -> void:
@@ -24,12 +25,25 @@ func load_dialogue(dialogue_resource: DialogueResource) -> void:
 	dialogue_scene.dialogue_resource = dialogue_resource
 	add_child(dialogue_scene)
 
-func load_minigame() -> void:
-	var minigame_scene = MINIGAME_SCENE.instantiate()
-	add_child(minigame_scene)
+func load_minigame(wiesen_data: WiesenData) -> void:
+	var wiese: Wiese = MINIGAME_SCENE.instantiate()
+	
+	wiese.minigame_has_dreck = wiesen_data.minigame_has_dreck
+	wiese.minigame_has_füttern = wiesen_data.minigame_has_füttern
+	wiese.minigame_has_stoecker = wiesen_data.minigame_has_stoecker
+	wiese.minigame_has_streicheln = wiesen_data.minigame_has_streicheln
+	wiese.sheep_count = wiesen_data.sheep_count
+	
+	wiese.wiese_exited.connect(_on_wiese_finished)
+	
+	add_child(wiese)
 
 func _on_main_menu_game_started() -> void:
 	load_next()
+
+func _on_wiese_finished(wiese) -> void:
+	load_next()
+	wiese.queue_free()
 
 func _on_dialogue_finished(dialogue_scene) -> void:
 	load_next()

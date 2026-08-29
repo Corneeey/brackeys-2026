@@ -1,4 +1,6 @@
-extends Node2D
+class_name Wiese extends Node2D
+
+signal wiese_exited
 
 const MINISHEEP_SCENE = preload("res://scenes/wiese/mini_sheep.tscn")
 const MINIGAME_SCENE = preload("res://scenes/minigame/minigame.tscn")
@@ -25,3 +27,6 @@ func spawn_mini_sheep() -> void:
 func _open_sheep() -> void:
 	add_child(MINIGAME_SCENE.instantiate())
 	SheepManager.is_sheep_minigame_open = true
+
+func _on_back_button_pressed() -> void:
+	wiese_exited.emit(self)
