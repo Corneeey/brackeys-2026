@@ -1,4 +1,13 @@
 ~ start
-Polyphemus: ich liebe Fortnite
-Nobody: Ich liebe dich <3
+Polyphemus: I know you only came here for a meal and a warm place for the night little man, but it would hurt my heart to see you leave already. So please consider staying, maybe even just for a couple of days.
+if ScoreManager.get_score_percentage() <= 25
+	# hostile Thoughts
+	Nobody: (He fell not just for my trick but for me it seems. If I stay just a bit longer I might be able to steal his flock for me and my men.)
+elif ScoreManager.get_score_percentage() >= 75
+	# positive thoughts
+	Nobody:(Never in my life have I felt as I have felt here on this island with Polyphemus and his sheep. I want to stay here with my Big Guy.. with my Gentle Giant.)
+else
+	# neutral Thoughts
+	Nobody: (I’m unsure what to do. On the one hand I could steal his flock and continue home with my men but on the other he’s a really nice guy. I could just stay with him.)
+
 => END
