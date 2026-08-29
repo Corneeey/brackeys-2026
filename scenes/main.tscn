@@ -17,14 +17,16 @@ script = ExtResource("3_jyhfs")
 
 [node name="FoodSprite" type="Sprite2D" parent="Food" unique_id=1765252169]
 z_index = 1
+position = Vector2(37, 423)
 texture = ExtResource("2_sugp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Food" unique_id=944961517]
-position = Vector2(3, -4.5)
+position = Vector2(14, 426)
 shape = SubResource("RectangleShape2D_sugp2")
 
 [node name="Sheep" parent="." unique_id=196554312 instance=ExtResource("1_o5qli")]
-position = Vector2(575, 319)
+position = Vector2(957.3104, 536.74365)
+scale = Vector2(1.4384458, 1.266642)
 
 [connection signal="input_event" from="Food" to="." method="_on_food_input_event"]
 [connection signal="mouse_entered" from="Food" to="." method="_on_food_mouse_entered"]

@@ -1,14 +1,7 @@
 extends Sprite2D
 
 var is_in_hover_on_body = false 
-var is_hover_on_dirt = false
 @export var has_food = false
-
-func _on_dirt_mouse_entered() -> void:
-	is_hover_on_dirt = true
-
-func _on_dirt_mouse_exited() -> void:
-	is_hover_on_dirt = false
 
 func _on_sheep_body_mouse_entered() -> void:
 	is_in_hover_on_body = true
