@@ -25,9 +25,9 @@ var current_dirt_score = 0
 var score = 0
 
 func get_score_percentage():
-	var a = (min(score, max_score)/max_score) * 100
-	print(a,score)
-	return a
+	var score_percentage = min(score, max_score) * 100/max_score
+	print(score_percentage, score)
+	return score_percentage
 	
 
 func finish_sheep():
