@@ -1,23 +1,28 @@
 [gd_scene format=3 uid="uid://bv1inve5ql5oi"]
 
-[ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="1_bltby"]
 [ext_resource type="Script" uid="uid://dt1maos60b55t" path="res://scenes/wiese/mini_sheep.gd" id="1_oe5ye"]
+[ext_resource type="Texture2D" uid="uid://brkbmw2oo45ki" path="res://assets/minigame/sheep_small_dirty.png" id="2_oe5ye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bltby"]
 size = Vector2(140, 146.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sugp2"]
+blend_mode = 3
 
 [node name="MiniSheep" type="CharacterBody2D" unique_id=472881035]
 script = ExtResource("1_oe5ye")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=707927922]
+position = Vector2(-82, -78)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=178736252]
 position = Vector2(70, 73.75)
 shape = SubResource("RectangleShape2D_bltby")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1567831434]
+material = SubResource("CanvasItemMaterial_sugp2")
 position = Vector2(0, -0.75)
-texture = ExtResource("1_bltby")
+texture = ExtResource("2_oe5ye")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

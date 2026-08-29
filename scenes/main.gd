@@ -43,6 +43,7 @@ func load_minigame(wiesen_data: WiesenData) -> void:
 	wiese.minigame_has_stoecker = wiesen_data.minigame_has_stoecker
 	wiese.minigame_has_streicheln = wiesen_data.minigame_has_streicheln
 	wiese.sheep_count = wiesen_data.sheep_count
+	wiese.clean_sheep_count = wiesen_data.clean_sheep_count
 	
 	wiese.wiese_exited.connect(_on_wiese_finished)
 	
