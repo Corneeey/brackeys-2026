@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcukoa831n6oq" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d15otiv7naa7r" path="res://scenes/sheep.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="2_sugp2"]
-[ext_resource type="Texture2D" uid="uid://dyutm7hq2rb77" path="res://assets/hand.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://lwvk58qfplta" path="res://assets/hand.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://c1mo027bjmnsw" path="res://assets/brush.webp" id="3_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://do1bu07rimj8g" path="res://assets/zange.png" id="4_tipki"]
 
@@ -22,8 +22,8 @@ shape = SubResource("RectangleShape2D_sugp2")
 
 [node name="FoodSprite" type="Sprite2D" parent="Hand/CollisionShape2D" unique_id=1458004346]
 z_index = 1
-position = Vector2(10, 1)
-scale = Vector2(0.031000042, 0.027625075)
+position = Vector2(-2.4799957, -4.7100296)
+scale = Vector2(0.323375, 0.29909396)
 texture = ExtResource("2_tefeu")
 
 [node name="Brush" type="Area2D" parent="." unique_id=293592854]
