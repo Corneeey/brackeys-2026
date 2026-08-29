@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dq1frh3ao6eb4" path="res://assets/minigame/branches/branch_01.png" id="5_5s13y"]
 [ext_resource type="Texture2D" uid="uid://m5cuedsn43u5" path="res://assets/minigame/branches/branch_02.png" id="6_yb3f1"]
 [ext_resource type="Texture2D" uid="uid://b1rwg3oxaugtf" path="res://assets/minigame/branches/branch_03.png" id="7_trnf6"]
+[ext_resource type="Texture2D" uid="uid://ckxbhfu0a3w2t" path="res://assets/minigame/branches/leaves_01.png" id="8_j8xsb"]
+[ext_resource type="Texture2D" uid="uid://11331xxpm0uk" path="res://assets/minigame/branches/leaves_02.png" id="9_nx8rn"]
+[ext_resource type="Texture2D" uid="uid://ddkt6nk3svnud" path="res://assets/minigame/branches/leaves_03.png" id="10_53wyp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5qli"]
 radius = 105.42215
@@ -54,13 +57,28 @@ texture = ExtResource("5_5s13y")
 
 [node name="Stick2" parent="." unique_id=1278065264 instance=ExtResource("3_nh37d")]
 visible = false
-position = Vector2(345.49213, 95.798744)
+position = Vector2(320, 14)
 texture = ExtResource("6_yb3f1")
 
 [node name="Stick3" parent="." unique_id=110452212 instance=ExtResource("3_nh37d")]
 visible = false
-position = Vector2(-46, 103)
+position = Vector2(-118, 231)
 texture = ExtResource("7_trnf6")
+
+[node name="Stick4" parent="." unique_id=1330524835 instance=ExtResource("3_nh37d")]
+visible = false
+position = Vector2(105, -104)
+texture = ExtResource("8_j8xsb")
+
+[node name="Stick5" parent="." unique_id=901303030 instance=ExtResource("3_nh37d")]
+visible = false
+position = Vector2(424, 243)
+texture = ExtResource("9_nx8rn")
+
+[node name="Stick6" parent="." unique_id=575484424 instance=ExtResource("3_nh37d")]
+visible = false
+position = Vector2(-196, -26)
+texture = ExtResource("10_53wyp")
 
 [connection signal="mouse_entered" from="SheepBody" to="." method="_on_sheep_body_mouse_entered"]
 [connection signal="mouse_exited" from="SheepBody" to="." method="_on_sheep_body_mouse_exited"]
