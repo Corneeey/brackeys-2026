@@ -1,6 +1,6 @@
 extends Node2D
 
-const MINISHEEP_SCENE = preload("res://scenes/mini_sheep.tscn")
+const MINISHEEP_SCENE = preload("res://scenes/wiese/mini_sheep.tscn")
 const MINIGAME_SCENE = preload("res://scenes/minigame/minigame.tscn")
 
 @export var minigame_has_streicheln = true

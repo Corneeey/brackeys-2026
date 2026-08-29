@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://7ut1qdou8lic"]
+[gd_scene format=3 uid="uid://bv1inve5ql5oi"]
 
 [ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="1_bltby"]
-[ext_resource type="Script" uid="uid://dt1maos60b55t" path="res://scenes/mini_sheep.gd" id="1_vdjdi"]
+[ext_resource type="Script" uid="uid://dt1maos60b55t" path="res://scenes/wiese/mini_sheep.gd" id="1_oe5ye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bltby"]
 size = Vector2(140, 146.5)
 
 [node name="MiniSheep" type="CharacterBody2D" unique_id=472881035]
-script = ExtResource("1_vdjdi")
+script = ExtResource("1_oe5ye")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=707927922]
 

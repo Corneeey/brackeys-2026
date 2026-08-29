@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1mo027bjmnsw" path="res://assets/brush.webp" id="2_suo05"]
 [ext_resource type="Texture2D" uid="uid://do1bu07rimj8g" path="res://assets/zange.png" id="3_x8ymt"]
 [ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="4_wph28"]
-[ext_resource type="PackedScene" uid="uid://d15otiv7naa7r" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
+[ext_resource type="PackedScene" uid="uid://bvx0t6uoc7sl2" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(268, 175.5)

@@ -1,23 +1,16 @@
-[gd_scene format=3 uid="uid://d15otiv7naa7r"]
+[gd_scene format=3 uid="uid://bvx0t6uoc7sl2"]
 
-[ext_resource type="Texture2D" uid="uid://cmw0lnh1jot63" path="res://assets/minigame/sheep_clean.png" id="1_nh37d"]
-[ext_resource type="Script" uid="uid://scyn2qylqglk" path="res://scenes/minigame/sheep/sheep.gd" id="2_nh37d"]
-[ext_resource type="PackedScene" uid="uid://bbiucjs704mpt" path="res://scenes/dirt.tscn" id="3_ti8yq"]
-[ext_resource type="PackedScene" uid="uid://8upq0h66dcyc" path="res://scenes/stick.tscn" id="4_5s13y"]
+[ext_resource type="Texture2D" uid="uid://cmw0lnh1jot63" path="res://assets/minigame/sheep_clean.png" id="1_6qn06"]
+[ext_resource type="PackedScene" uid="uid://byxf10k8gd8fv" path="res://scenes/minigame/sheep/dirt.tscn" id="2_5foe2"]
+[ext_resource type="PackedScene" uid="uid://bj56g22omixdy" path="res://scenes/minigame/sheep/stick.tscn" id="3_nh37d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5qli"]
 radius = 105.42215
 height = 210.8443
 
 [node name="Sheep" type="Sprite2D" unique_id=196554312]
-position = Vector2(960, 540)
-texture = ExtResource("1_nh37d")
-script = ExtResource("2_nh37d")
-
-[node name="Dirt" parent="." unique_id=1317732654 instance=ExtResource("3_ti8yq")]
-
-[node name="Dirt2" parent="." unique_id=2043107964 instance=ExtResource("3_ti8yq")]
-position = Vector2(150.30473, -17.213837)
+scale = Vector2(1.9161074, 1.3361344)
+texture = ExtResource("1_6qn06")
 
 [node name="SheepBody" type="Area2D" parent="." unique_id=1520218605]
 
@@ -30,13 +23,18 @@ polygon = PackedVector2Array(-412, -420.9, -414.1, -421, -462.1, -421, -469.3, -
 position = Vector2(-550.07355, -83.8239)
 shape = SubResource("CapsuleShape2D_o5qli")
 
-[node name="Stick" parent="." unique_id=1770781443 instance=ExtResource("4_5s13y")]
-position = Vector2(-121.0788, -64.36477)
-rotation = 3.0130897
+[node name="Dirt" parent="." unique_id=1317732654 instance=ExtResource("2_5foe2")]
+position = Vector2(-104.37828, 56.880505)
+scale = Vector2(0.5218914, 0.7484277)
 
-[node name="Stick2" parent="." unique_id=574677491 instance=ExtResource("4_5s13y")]
-position = Vector2(455.61115, 77.088036)
-rotation = 3.0130897
+[node name="Dirt2" parent="." unique_id=1318375711 instance=ExtResource("2_5foe2")]
+position = Vector2(135.69177, 8.9811325)
+
+[node name="Stick" parent="." unique_id=1770781443 instance=ExtResource("3_nh37d")]
+position = Vector2(-315.2224, -61.37107)
+
+[node name="Stick2" parent="." unique_id=1278065264 instance=ExtResource("3_nh37d")]
+position = Vector2(345.49213, 95.798744)
 
 [connection signal="mouse_entered" from="SheepBody" to="." method="_on_sheep_body_mouse_entered"]
 [connection signal="mouse_exited" from="SheepBody" to="." method="_on_sheep_body_mouse_exited"]
