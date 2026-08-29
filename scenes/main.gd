@@ -1,5 +1,9 @@
 extends Node
 
+const MENU_SONG: AudioStream = preload("uid://cqx1ynfb8130s")
+const SHEEP_SONG: AudioStream = preload("uid://dr3y67lvns387")
+const DATING_SONG: AudioStream = preload("uid://ddhbnssdlihyx")
+
 const DIALOGUE_SCENE = preload("uid://beviupxr7gc7m")
 const MINIGAME_SCENE = preload("uid://bo8bqu8f3i8lc")
 
@@ -23,6 +27,10 @@ func load_dialogue(dialogue_resource: DialogueResource) -> void:
 	var dialogue_scene: DialogueScene = DIALOGUE_SCENE.instantiate()
 	dialogue_scene.dialogue_finished.connect(_on_dialogue_finished)
 	dialogue_scene.dialogue_resource = dialogue_resource
+	
+	$MusicPlayer.stream = DATING_SONG
+	$MusicPlayer.play()
+	
 	add_child(dialogue_scene)
 
 func load_minigame(wiesen_data: WiesenData) -> void:
@@ -35,6 +43,9 @@ func load_minigame(wiesen_data: WiesenData) -> void:
 	wiese.sheep_count = wiesen_data.sheep_count
 	
 	wiese.wiese_exited.connect(_on_wiese_finished)
+	
+	$MusicPlayer.stream = SHEEP_SONG
+	$MusicPlayer.play()
 	
 	add_child(wiese)
 

@@ -93,6 +93,7 @@ offset_right = 1904.0
 offset_bottom = 169.0
 
 [node name="MinigameAudio" type="AudioStreamPlayer" parent="." unique_id=1696163578]
+bus = &"Sound"
 script = ExtResource("7_x8ymt")
 audio_bundles = Dictionary[int, ExtResource("8_8k6tk")]({
 0: ExtResource("9_8k6tk"),
