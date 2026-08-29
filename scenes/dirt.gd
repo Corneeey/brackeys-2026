@@ -12,7 +12,6 @@ func _mouse_exit() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if(event is InputEventMouseMotion && is_getting_cleaned):
-		print("dirt is getting cleaned")
 		self.modulate = Color(self.modulate, dirt_alpha)
 		dirt_alpha -= 0.008
 		

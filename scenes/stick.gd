@@ -1,0 +1,32 @@
+extends Area2D
+
+var is_draggable = false
+var offset : Vector2
+
+var is_dissolving = false
+var alpha = 1
+
+func _process(delta: float) -> void:
+	if(is_draggable):
+		if(Input.is_action_just_pressed("drag")):
+			offset = get_global_mouse_position() - global_position
+			DraggableManager.is_currently_dragging_something = true
+		if(Input.is_action_pressed("drag")):
+			global_position = get_global_mouse_position() - offset
+		elif(Input.is_action_just_released("drag")):
+			DraggableManager.is_currently_dragging_something = false
+			if(!self.overlaps_area(SheepManager.sheep_body)):
+				is_dissolving = true
+	if(is_dissolving):
+		self.modulate = Color(self.modulate, alpha)
+		alpha -= delta
+
+func _mouse_enter() -> void:
+	if(!DraggableManager.is_currently_dragging_something && !is_dissolving):
+		is_draggable = true
+		scale = Vector2(1.05, 1.05)
+	
+func _mouse_exit() -> void:
+	if(!DraggableManager.is_currently_dragging_something):
+		is_draggable = false
+		scale = Vector2(1, 1)

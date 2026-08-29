@@ -3,6 +3,9 @@ extends Sprite2D
 var is_in_hover_on_body = false 
 @export var has_food = false
 
+func _ready() -> void:
+	SheepManager.sheep_body = $SheepBody
+
 func _on_sheep_body_mouse_entered() -> void:
 	is_in_hover_on_body = true
 
