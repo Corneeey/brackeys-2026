@@ -34,7 +34,7 @@ func _mouse_enter() -> void:
 			&& !is_dissolving 
 			&& ToolManager.active_tool == ToolManager.Tool.ZANGE):
 		is_draggable = true
-		scale = Vector2(1.05, 1.05)
+		scale = Vector2(1.1, 1.1)
 	
 func _mouse_exit() -> void:
 	if(!DraggableManager.is_currently_dragging_something):
