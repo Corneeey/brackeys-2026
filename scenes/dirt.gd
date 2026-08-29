@@ -8,12 +8,13 @@ func _mouse_enter() -> void:
 	
 func _mouse_exit() -> void:
 	is_getting_cleaned = false
-
-func _process(_delta: float) -> void:
-	if(is_getting_cleaned):
+	
+func _input(event: InputEvent) -> void:
+	if(event is InputEventMouseMotion && is_getting_cleaned):
 		print("dirt is getting cleaned")
 		self.modulate = Color(self.modulate, dirt_alpha)
 		dirt_alpha -= 0.008
-	
+		
 	if(dirt_alpha < 0.1):
 		self.visible = false
+		ScoreManager.score += ScoreManager.dirt_clean_score
