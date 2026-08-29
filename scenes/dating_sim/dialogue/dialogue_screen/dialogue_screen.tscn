@@ -88,6 +88,9 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7u3dk"]
+texture = ExtResource("13_t0k3n")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kollt"]
 texture = ExtResource("9_7rv8t")
 
@@ -110,9 +113,6 @@ variation_opentype = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qn2fh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjw1u"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7u3dk"]
-texture = ExtResource("13_t0k3n")
 
 [node name="DialogueScreen" type="CanvasLayer" unique_id=38036521]
 layer = 100
@@ -141,6 +141,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_6ddjm")
+
+[node name="Border" type="TextureRect" parent="Balloon" unique_id=88592217]
+z_index = 67
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("13_hloga")
 
 [node name="Odysseus" type="Control" parent="Balloon" unique_id=1107214599 node_paths=PackedStringArray("talking_texture", "listening_texture")]
 unique_name_in_owner = true
@@ -223,6 +230,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="SpeakerBoxLeft" type="PanelContainer" parent="Balloon" unique_id=841248686]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 127)
+custom_maximum_size = Vector2(240, 127)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 825.0
+offset_right = 330.0
+offset_bottom = 952.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_7u3dk")
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/SpeakerBoxLeft" unique_id=1567782692]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.18431373, 0.11372549, 0.050980393, 1)
+theme_override_fonts/normal_font = ExtResource("14_yjw1u")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeakerBoxRight" type="PanelContainer" parent="Balloon" unique_id=1394373831]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 127)
+custom_maximum_size = Vector2(240, 127)
+layout_mode = 0
+offset_left = 1594.0
+offset_top = 825.0
+offset_right = 1834.0
+offset_bottom = 952.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_7u3dk")
 
 [node name="DialogueBox" type="PanelContainer" parent="Balloon" unique_id=2051305084]
 custom_minimum_size = Vector2(1208, 204)
@@ -239,6 +287,7 @@ offset_right = 604.0
 offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_kollt")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/DialogueBox" unique_id=834263369]
@@ -285,53 +334,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_qn2fh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yjw1u")
 text = "Response example"
 alignment = 0
-
-[node name="SpeakerBoxLeft" type="PanelContainer" parent="Balloon" unique_id=841248686]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(240, 127)
-custom_maximum_size = Vector2(240, 127)
-layout_mode = 0
-offset_left = 90.0
-offset_top = 825.0
-offset_right = 330.0
-offset_bottom = 952.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_7u3dk")
-
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/SpeakerBoxLeft" unique_id=1567782692]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/default_color = Color(0.18431373, 0.11372549, 0.050980393, 1)
-theme_override_fonts/normal_font = ExtResource("14_yjw1u")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "Character"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SpeakerBoxRight" type="PanelContainer" parent="Balloon" unique_id=1394373831]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(240, 127)
-custom_maximum_size = Vector2(240, 127)
-layout_mode = 0
-offset_left = 1594.0
-offset_top = 825.0
-offset_right = 1834.0
-offset_bottom = 952.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_7u3dk")
-
-[node name="Border" type="TextureRect" parent="Balloon" unique_id=88592217]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-mouse_filter = 2
-texture = ExtResource("13_hloga")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
