@@ -13,9 +13,22 @@ var is_hovering_anything = false
 
 @onready var minigame_audio: MinigameAudio = $MinigameAudio
 
+@onready var hand_tool = $Hand
+@onready var brush_tool = $Brush
+@onready var zange_tool = $Zange
+@onready var food_tool = $Food
+
 func _ready() -> void:
 	ToolManager.ate_food.connect(_on_ate_food)
 	_connect_sheep_signals()
+	if(MinigameLevelManager.minigame_has_dreck):
+		brush_tool.visible = true
+	if(MinigameLevelManager.minigame_has_füttern):
+		food_tool.visible = true
+	if(MinigameLevelManager.minigame_has_stoecker):
+		zange_tool.visible = true
+	if(MinigameLevelManager.minigame_has_streicheln):
+		hand_tool.visible = true
 
 func _connect_sheep_signals() -> void:
 	sheep.brushed.connect(_on_sheep_brushed)

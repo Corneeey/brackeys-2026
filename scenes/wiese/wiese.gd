@@ -10,6 +10,10 @@ const MINIGAME_SCENE = preload("res://scenes/minigame/minigame.tscn")
 @export var sheep_count = 4
 
 func _ready() -> void:
+	MinigameLevelManager.minigame_has_dreck = minigame_has_dreck
+	MinigameLevelManager.minigame_has_füttern = minigame_has_füttern
+	MinigameLevelManager.minigame_has_stoecker = minigame_has_stoecker
+	MinigameLevelManager.minigame_has_streicheln = minigame_has_streicheln
 	for i in sheep_count:
 		spawn_mini_sheep()
 

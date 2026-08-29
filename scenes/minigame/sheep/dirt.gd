@@ -59,5 +59,5 @@ func apply_brush() -> void:
 func clear_dirt() -> void:
 	self.visible = false
 	if(!is_scored):
-		ScoreManager.score += ScoreManager.dirt_clean_score
+		ScoreManager.current_dirt_score += ScoreManager.dirt_clean_score
 		is_scored = true

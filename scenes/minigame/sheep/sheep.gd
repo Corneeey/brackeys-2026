@@ -8,11 +8,20 @@ var is_in_hover_on_body = false
 func _ready() -> void:
 	SheepManager.sheep_body = $SheepBody
 	_connect_dirt_signals()
+	_take_care_of_stick()
 
 func _connect_dirt_signals() -> void:
 	for child in get_children():
 		if child is Dirt:
 			child.brushed.connect(brushed.emit)
+			if(MinigameLevelManager.minigame_has_dreck):
+				child.visible = true
+				
+func _take_care_of_stick() -> void:
+	for child in get_children():
+		if child is Stick:
+			if(MinigameLevelManager.minigame_has_stoecker):
+				child.visible = true
 
 func _on_sheep_body_mouse_entered() -> void:
 	is_in_hover_on_body = true
@@ -22,7 +31,7 @@ func _on_sheep_body_mouse_exited() -> void:
 	
 func _on_sheep_mouth_mouse_entered() -> void:
 	if(ToolManager.active_tool == ToolManager.Tool.KAROTTE):
-		ScoreManager.score += ScoreManager.feed_food_score
+		ScoreManager.current_food_score += ScoreManager.feed_food_score
 		ToolManager.active_tool = ToolManager.Tool.NONE
 		ToolManager.ate_food.emit()
 
@@ -32,7 +41,7 @@ func _input(event: InputEvent) -> void:
 
 func pet_sheep() -> void:
 	petted.emit()
-	ScoreManager.score += ScoreManager.scratch_score_per_movement
+	ScoreManager.current_scratch_score += ScoreManager.scratch_score_per_movement
 
 func _is_petting_event(event: InputEvent) -> bool:
 	return (

@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cmw0lnh1jot63" path="res://assets/minigame/sheep_clean.png" id="1_6qn06"]
 [ext_resource type="PackedScene" uid="uid://b5xldglsskp0p" path="res://scenes/minigame/sheep/dirt.tscn" id="2_5foe2"]
-[ext_resource type="PackedScene" uid="uid://dkcwsi5qeduas" path="res://scenes/minigame/sheep/stick.tscn" id="3_nh37d"]
+[ext_resource type="Script" uid="uid://scyn2qylqglk" path="res://scenes/minigame/sheep/sheep.gd" id="2_nh37d"]
+[ext_resource type="PackedScene" uid="uid://bj56g22omixdy" path="res://scenes/minigame/sheep/stick.tscn" id="3_nh37d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5qli"]
 radius = 105.42215
@@ -11,6 +12,7 @@ height = 210.8443
 [node name="Sheep" type="Sprite2D" unique_id=196554312]
 scale = Vector2(1.9161074, 1.3361344)
 texture = ExtResource("1_6qn06")
+script = ExtResource("2_nh37d")
 
 [node name="SheepBody" type="Area2D" parent="." unique_id=1520218605]
 
@@ -24,33 +26,40 @@ position = Vector2(-550.07355, -83.8239)
 shape = SubResource("CapsuleShape2D_o5qli")
 
 [node name="DirtHead" parent="." unique_id=1317732654 instance=ExtResource("2_5foe2")]
+visible = false
 position = Vector2(-104.37828, 56.880505)
 scale = Vector2(0.5218914, 0.7484277)
 
 [node name="DirtUpRight" parent="." unique_id=544972487 instance=ExtResource("2_5foe2")]
+visible = false
 position = Vector2(-104.37828, 56.880505)
 scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "up_right"
 
 [node name="DirtTopMid" parent="." unique_id=679448795 instance=ExtResource("2_5foe2")]
+visible = false
 position = Vector2(-104.37828, 56.880505)
 scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "top_mid"
 
 [node name="DirtDownLeft" parent="." unique_id=406006974 instance=ExtResource("2_5foe2")]
+visible = false
 position = Vector2(-104.37828, 56.880505)
 scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "down_left"
 
 [node name="DirtDownRight" parent="." unique_id=1030505917 instance=ExtResource("2_5foe2")]
+visible = false
 position = Vector2(-104.37828, 56.880505)
 scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "down_right"
 
 [node name="Stick" parent="." unique_id=1770781443 instance=ExtResource("3_nh37d")]
+visible = false
 position = Vector2(-315.2224, -61.37107)
 
 [node name="Stick2" parent="." unique_id=1278065264 instance=ExtResource("3_nh37d")]
+visible = false
 position = Vector2(345.49213, 95.798744)
 
 [connection signal="mouse_entered" from="SheepBody" to="." method="_on_sheep_body_mouse_entered"]
