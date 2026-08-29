@@ -26,31 +26,21 @@ shape = SubResource("CapsuleShape2D_o5qli")
 
 [node name="DirtHead" parent="." unique_id=1317732654 instance=ExtResource("2_5foe2")]
 visible = false
-position = Vector2(-104.37828, 56.880505)
-scale = Vector2(0.5218914, 0.7484277)
 
 [node name="DirtUpRight" parent="." unique_id=544972487 instance=ExtResource("2_5foe2")]
 visible = false
-position = Vector2(-104.37828, 56.880505)
-scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "up_right"
 
 [node name="DirtTopMid" parent="." unique_id=679448795 instance=ExtResource("2_5foe2")]
 visible = false
-position = Vector2(-104.37828, 56.880505)
-scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "top_mid"
 
 [node name="DirtDownLeft" parent="." unique_id=406006974 instance=ExtResource("2_5foe2")]
 visible = false
-position = Vector2(-104.37828, 56.880505)
-scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "down_left"
 
 [node name="DirtDownRight" parent="." unique_id=1030505917 instance=ExtResource("2_5foe2")]
 visible = false
-position = Vector2(-104.37828, 56.880505)
-scale = Vector2(0.5218914, 0.7484277)
 which_dirt = "down_right"
 
 [node name="Stick" parent="." unique_id=1770781443 instance=ExtResource("3_nh37d")]
