@@ -54,6 +54,12 @@ func change_actor(actor: Actor) -> void:
 		Actor.ODYSSEUS:
 			dialogue.odysseus.set_talking()
 			dialogue.polyphemus.set_listening()
+			dialogue.speaker_box_left.visible = true
+			dialogue.speaker_box_right.visible = false
+			dialogue.character_label.reparent(dialogue.speaker_box_left)
 		Actor.POLYPHEMUS:
 			dialogue.polyphemus.set_talking()
 			dialogue.odysseus.set_listening()
+			dialogue.speaker_box_left.visible = false
+			dialogue.speaker_box_right.visible = true
+			dialogue.character_label.reparent(dialogue.speaker_box_right)
