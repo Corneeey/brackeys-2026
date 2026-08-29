@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cytbxmliq4386"]
+
+[ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="1_8aw37"]
+[ext_resource type="Script" uid="uid://b2y2ektt7bqoy" path="res://scenes/main_menu/settings_popup.gd" id="1_wwc7i"]
+
+[node name="SettingsPopup" type="PanelContainer" unique_id=1543002235]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wwc7i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1238612950]
+layout_mode = 2
+alignment = 1
+
+[node name="MasterVolumeControls" type="HBoxContainer" parent="VBoxContainer" unique_id=598442298]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MasterVolumeControls" unique_id=1727817888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Main Volume "
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="VBoxContainer/MasterVolumeControls" unique_id=1625263435]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MasterVolumeMuteButton" type="TextureButton" parent="VBoxContainer/MasterVolumeControls" unique_id=367520677]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("1_8aw37")
+stretch_mode = 0
+
+[node name="MusicVolumeControls" type="HBoxContainer" parent="VBoxContainer" unique_id=214758906]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MusicVolumeControls" unique_id=43888419]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Music Volume"
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer/MusicVolumeControls" unique_id=1604061960]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicVolumeMuteButton" type="TextureButton" parent="VBoxContainer/MusicVolumeControls" unique_id=1619006734]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("1_8aw37")
+stretch_mode = 0
+
+[node name="SoundVolumeControls" type="HBoxContainer" parent="VBoxContainer" unique_id=1460358298]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SoundVolumeControls" unique_id=982872248]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Sound Volume"
+vertical_alignment = 1
+
+[node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer/SoundVolumeControls" unique_id=902612164]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SoundVolumeMuteButton" type="TextureButton" parent="VBoxContainer/SoundVolumeControls" unique_id=1361509272]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("1_8aw37")
+stretch_mode = 0
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=257325633]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=604477373]
+bus = &"Sound"
+
+[connection signal="value_changed" from="VBoxContainer/MasterVolumeControls/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/MasterVolumeControls/MasterVolumeMuteButton" to="." method="_on_master_volume_mute_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/MusicVolumeControls/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/MusicVolumeControls/MusicVolumeMuteButton" to="." method="_on_music_volume_mute_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/SoundVolumeControls/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/SoundVolumeControls/SoundVolumeMuteButton" to="." method="_on_sound_volume_mute_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

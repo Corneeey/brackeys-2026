@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://bjaldegriam12"]
 
 [ext_resource type="Script" uid="uid://d2t75xso5ieoc" path="res://scenes/main.gd" id="1_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://ddhbnssdlihyx" path="res://assets/music/dating.mp3" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b0xdbd5kjd1g" path="res://scenes/main_menu/main_menu.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node" unique_id=105591987]
 script = ExtResource("1_jyhfs")
 
 [node name="MainMenu" parent="." unique_id=704655114 instance=ExtResource("3_sugp2")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=223320665]
+stream = ExtResource("3_jyhfs")
+autoplay = true
+bus = &"Music"
 
 [connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]

@@ -12,6 +12,7 @@ func _on_play_button_pressed() -> void:
 	click_player.finished.connect(queue_free)
 
 func _on_settings_button_pressed() -> void:
+	%SettingsPopup.visible = true
 	click_player.play()
 
 func _on_play_button_mouse_entered() -> void:
