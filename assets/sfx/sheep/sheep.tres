@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AudioBundle" format=3 uid="uid://cjt8r343hldcl"]
+
+[ext_resource type="Script" uid="uid://bojxyftafuv1a" path="res://types/audio_bundle.gd" id="1_xbomr"]
+[ext_resource type="AudioStream" uid="uid://bx4xeh74cgusg" path="res://assets/sfx/sheep/sheep_1.wav" id="2_6oetg"]
+[ext_resource type="AudioStream" uid="uid://11dex8il7atu" path="res://assets/sfx/sheep/sheep_2.wav" id="3_an745"]
+[ext_resource type="AudioStream" uid="uid://be2kuunao15v8" path="res://assets/sfx/sheep/sheep_3.wav" id="4_y71bf"]
+[ext_resource type="AudioStream" uid="uid://cp4hbgwdoa4yx" path="res://assets/sfx/sheep/sheep_4.wav" id="5_tu3y6"]
+[ext_resource type="AudioStream" uid="uid://dfop516n5jh3e" path="res://assets/sfx/sheep/sheep_5.wav" id="6_kj3l6"]
+
+[resource]
+script = ExtResource("1_xbomr")
+sound_bites = Array[AudioStream]([ExtResource("2_6oetg"), ExtResource("3_an745"), ExtResource("4_y71bf"), ExtResource("5_tu3y6"), ExtResource("6_kj3l6")])
+metadata/_custom_type_script = "uid://bojxyftafuv1a"

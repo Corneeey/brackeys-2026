@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioBundle" format=3 uid="uid://dipogsgnd74di"]
+
+[ext_resource type="Script" uid="uid://bojxyftafuv1a" path="res://types/audio_bundle.gd" id="1_ony41"]
+[ext_resource type="AudioStream" uid="uid://b5wd1rejyrdh4" path="res://assets/sfx/brush/brush_1.wav" id="2_h5afb"]
+[ext_resource type="AudioStream" uid="uid://csc1vutv6u8d3" path="res://assets/sfx/brush/brush_2.wav" id="3_k2y7j"]
+[ext_resource type="AudioStream" uid="uid://dvapljyj1bt2y" path="res://assets/sfx/brush/brush_3.wav" id="4_e2i8d"]
+[ext_resource type="AudioStream" uid="uid://b8aolbm0j7pah" path="res://assets/sfx/brush/brush_4.wav" id="5_glhvi"]
+[ext_resource type="AudioStream" uid="uid://mdjxlex2lu0l" path="res://assets/sfx/brush/brush_5.wav" id="6_krsyo"]
+[ext_resource type="AudioStream" uid="uid://demssleudvkfg" path="res://assets/sfx/brush/brush_6.wav" id="7_qyhp5"]
+
+[resource]
+script = ExtResource("1_ony41")
+sound_bites = Array[AudioStream]([ExtResource("2_h5afb"), ExtResource("3_k2y7j"), ExtResource("4_e2i8d"), ExtResource("5_glhvi"), ExtResource("6_krsyo"), ExtResource("7_qyhp5")])
+metadata/_custom_type_script = "uid://bojxyftafuv1a"

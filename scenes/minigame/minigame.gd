@@ -4,14 +4,28 @@ var currently_hovered_tool : ToolManager.Tool = ToolManager.Tool.NONE
 var is_hovering_anything = false
 
 @onready var cursor_img = $Cursor
+@onready var sheep = $Sheep
 
 @onready var texture_brush : Texture2D = load("res://assets/brush.webp")
 @onready var texture_hand : Texture2D = load("res://assets/hand.png")
 @onready var texture_zange : Texture2D = load("res://assets/zange.png")
 @onready var texture_karrote : Texture2D = load("res://assets/340.webp")
 
+@onready var minigame_audio: MinigameAudio = $MinigameAudio
+
 func _ready() -> void:
 	ToolManager.ate_food.connect(_on_ate_food)
+	_connect_sheep_signals()
+
+func _connect_sheep_signals() -> void:
+	sheep.brushed.connect(_on_sheep_brushed)
+	sheep.petted.connect(_on_sheep_petted)
+
+func _on_sheep_brushed() -> void:
+	minigame_audio.play_audio(MinigameAudio.AudioEvent.BRUSHED)
+
+func _on_sheep_petted() -> void:
+	minigame_audio.play_audio(MinigameAudio.AudioEvent.PETTED)
 
 # FOOD
 func _on_food_mouse_entered() -> void:
@@ -66,6 +80,7 @@ func _process(_delta: float) -> void:
 	cursor_img.global_position = get_global_mouse_position()
 	
 func _on_ate_food():
+	minigame_audio.play_audio(MinigameAudio.AudioEvent.CARROT_FED)
 	cursor_img.visible = false
 
 func _on_quit_minigame_pressed() -> void:
