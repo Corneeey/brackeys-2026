@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d15otiv7naa7r"]
 
-[ext_resource type="Texture2D" uid="uid://bc2mxnktr4prw" path="res://assets/sheep_part/sheep_clean.png" id="1_6qn06"]
+[ext_resource type="Texture2D" uid="uid://cmw0lnh1jot63" path="res://assets/minigame/sheep_clean.png" id="1_6qn06"]
 [ext_resource type="Script" uid="uid://scyn2qylqglk" path="res://scenes/sheep.gd" id="2_gw4f6"]
 [ext_resource type="PackedScene" uid="uid://b5xldglsskp0p" path="res://scenes/dirt.tscn" id="3_6qn06"]
 

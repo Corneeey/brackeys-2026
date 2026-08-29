@@ -11,5 +11,5 @@ var scratch_score_per_movement = 0.001
 
 var score = 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	print("Score: ", score)
