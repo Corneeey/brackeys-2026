@@ -3,7 +3,7 @@ extends Node2D
 var currently_hovered_tool : ToolManager.Tool = ToolManager.Tool.NONE
 var is_hovering_anything = false
 
-@onready var cursor_img = $Cursor
+@onready var cursor_img : Sprite2D = $Cursor
 @onready var sheep = $Sheep
 
 @onready var mouse_texture_brush : Texture2D = load("res://assets/minigame/tools/brush.png")
@@ -84,19 +84,24 @@ func _on_comb_button_toggled(toggled_on: bool) -> void:
 		food_tool.button_pressed = false
 		ToolManager.active_tool = ToolManager.Tool.ZANGE
 		do_cursor_stuff(true)
+		cursor_img.scale = Vector2(0.5, 0.5)
 	else:
 		ToolManager.active_tool = ToolManager.Tool.NONE
 		do_cursor_stuff(false)
+		cursor_img.scale = Vector2(0.8, 0.8)
 		
 func _on_ate_food():
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.CARROT_FED)
 	cursor_img.visible = false
 	food_tool.button_pressed = false
+	ScoreManager.current_food_score += ScoreManager.feed_food_score
+	ToolManager.active_tool = ToolManager.Tool.NONE
 	do_cursor_stuff(false)
 
 func _on_quit_minigame_pressed() -> void:
 	ScoreManager.finish_sheep()
 	SheepManager.is_sheep_minigame_open = false
+	do_cursor_stuff(false)
 	self.queue_free()
 
 func _process(_delta: float) -> void:

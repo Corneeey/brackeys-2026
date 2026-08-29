@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dav55o28iq56g" path="res://assets/stick.webp" id="2_m8wbh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n54i3"]
-height = 218.00002
+radius = 22.197334
+height = 248.01892
 
 [node name="Stick" type="Area2D" unique_id=1770781443]
 script = ExtResource("1_ld7er")

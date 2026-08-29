@@ -70,6 +70,7 @@ position = Vector2(927, 488.00006)
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=749678793]
 visible = false
+scale = Vector2(0.7, 0.7)
 
 [node name="QuitMinigame" type="Button" parent="." unique_id=1753550150]
 offset_left = 1623.0
