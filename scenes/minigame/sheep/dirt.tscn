@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://byxf10k8gd8fv"]
+[gd_scene format=3 uid="uid://b5xldglsskp0p"]
 
 [ext_resource type="Script" uid="uid://il12x6qoojtf" path="res://scenes/minigame/sheep/dirt.gd" id="1_elwhm"]
 [ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="2_5kli6"]
