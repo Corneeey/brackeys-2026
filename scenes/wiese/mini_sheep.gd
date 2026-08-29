@@ -22,9 +22,10 @@ func _process(_delta: float) -> void:
 				_open_sheep()
 
 func _open_sheep() -> void:
-	open_sheep.emit()
-	already_cared_for = true
-	self.modulate = Color(self.modulate, 0.5)
+	if(!SheepManager.is_sheep_minigame_open):
+		open_sheep.emit()
+		already_cared_for = true
+		self.modulate = Color(self.modulate, 0.5)
 
 func _physics_process(_delta):
 	self.velocity = global_position.direction_to(target) * speed

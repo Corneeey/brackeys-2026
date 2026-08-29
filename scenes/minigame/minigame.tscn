@@ -72,6 +72,12 @@ scale = Vector2(1.4384458, 1.266642)
 visible = false
 texture = ExtResource("1_a7b5v")
 
+[node name="QuitMinigame" type="Button" parent="." unique_id=1753550150]
+offset_left = 1623.0
+offset_top = 44.0
+offset_right = 1904.0
+offset_bottom = 169.0
+
 [connection signal="mouse_entered" from="Hand" to="." method="_on_hand_mouse_entered"]
 [connection signal="mouse_exited" from="Hand" to="." method="_on_hand_mouse_exited"]
 [connection signal="mouse_entered" from="Brush" to="." method="_on_brush_mouse_entered"]
@@ -80,3 +86,4 @@ texture = ExtResource("1_a7b5v")
 [connection signal="mouse_exited" from="Zange" to="." method="_on_zange_mouse_exited"]
 [connection signal="mouse_entered" from="Food" to="." method="_on_food_mouse_entered"]
 [connection signal="mouse_exited" from="Food" to="." method="_on_food_mouse_exited"]
+[connection signal="pressed" from="QuitMinigame" to="." method="_on_quit_minigame_pressed"]

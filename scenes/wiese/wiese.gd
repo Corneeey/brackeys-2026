@@ -20,3 +20,4 @@ func spawn_mini_sheep() -> void:
 
 func _open_sheep() -> void:
 	add_child(MINIGAME_SCENE.instantiate())
+	SheepManager.is_sheep_minigame_open = true
