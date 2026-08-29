@@ -31,6 +31,7 @@ position = Vector2(960, 540)
 texture = ExtResource("3_yn1os")
 
 [node name="HandButton" type="TextureButton" parent="." unique_id=825310684]
+visible = false
 offset_left = 1290.0
 offset_top = 922.0
 offset_right = 1441.0
@@ -40,6 +41,7 @@ texture_normal = ExtResource("4_al4os")
 texture_pressed = ExtResource("5_j6hl7")
 
 [node name="BrushButton" type="TextureButton" parent="." unique_id=1981448791]
+visible = false
 offset_left = 748.0
 offset_top = 919.0
 offset_right = 902.0
@@ -49,6 +51,7 @@ texture_normal = ExtResource("7_7monl")
 texture_pressed = ExtResource("6_b7ekc")
 
 [node name="CombButton" type="TextureButton" parent="." unique_id=1979557866]
+visible = false
 offset_left = 1018.0
 offset_top = 916.0
 offset_right = 1169.0
@@ -58,6 +61,7 @@ texture_normal = ExtResource("8_6f0bu")
 texture_pressed = ExtResource("9_8as1d")
 
 [node name="FoodButton" type="TextureButton" parent="." unique_id=1246112466]
+visible = false
 offset_left = 480.0
 offset_top = 918.0
 offset_right = 631.0
