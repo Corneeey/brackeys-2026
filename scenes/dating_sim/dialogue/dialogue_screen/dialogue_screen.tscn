@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3c81row64mue" path="res://assets/visualnovel/p_talking.png" id="7_t0k3n"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="8_yjw1u"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="9_hloga"]
+[ext_resource type="AudioStream" uid="uid://c02mduj5q07d5" path="res://assets/sfx/odysseus_voice/odysseus_voice_1.wav" id="10_6ddjm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -291,6 +292,7 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
+stream = ExtResource("10_6ddjm")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

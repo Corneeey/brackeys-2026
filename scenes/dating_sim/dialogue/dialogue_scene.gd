@@ -31,10 +31,21 @@ func _process(_delta: float) -> void:
 func process_dialogue() -> void:
 	var actor: Actor = ACTORS[dialogue.dialogue_line.character]
 	
-	if (actor == current_actor):
-		return
+	if (actor != current_actor):
+		change_actor(actor)
 	
-	change_actor(actor)
+	if (is_someone_talking()):
+		play_dialogue_sound()
+
+func is_someone_talking() -> bool:
+	return !dialogue.is_waiting_for_input && !dialogue.responses_menu.visible
+
+func play_dialogue_sound() -> void:
+	match current_actor:
+		Actor.ODYSSEUS:
+			$OdysseusPlayer.play_audio()
+		Actor.POLYPHEMUS:
+			$PolyphemusPlayer.play_audio()
 
 func change_actor(actor: Actor) -> void:
 	current_actor = actor
