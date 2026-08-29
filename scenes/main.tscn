@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bcukoa831n6oq" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d15otiv7naa7r" path="res://scenes/sheep.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="2_sugp2"]
-[ext_resource type="Script" uid="uid://bxvnadqb2rnvt" path="res://scenes/food.gd" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://dyutm7hq2rb77" path="res://assets/hand.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://c1mo027bjmnsw" path="res://assets/brush.webp" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://do1bu07rimj8g" path="res://assets/zange.png" id="4_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(268, 189)
@@ -11,9 +13,47 @@ size = Vector2(268, 189)
 [node name="Main" type="Node" unique_id=105591987]
 script = ExtResource("1_jyhfs")
 
+[node name="Hand" type="Area2D" parent="." unique_id=1287541528]
+position = Vector2(1096, 4360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand" unique_id=321616856]
+position = Vector2(-642, -3361)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="FoodSprite" type="Sprite2D" parent="Hand/CollisionShape2D" unique_id=1458004346]
+z_index = 1
+position = Vector2(10, 1)
+scale = Vector2(0.031000042, 0.027625075)
+texture = ExtResource("2_tefeu")
+
+[node name="Brush" type="Area2D" parent="." unique_id=293592854]
+position = Vector2(548, 2180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brush" unique_id=1742619557]
+position = Vector2(640, -1146)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="FoodSprite" type="Sprite2D" parent="Brush/CollisionShape2D" unique_id=456983141]
+z_index = 1
+position = Vector2(4, -2)
+scale = Vector2(0.205, 0.177)
+texture = ExtResource("3_o6xl0")
+
+[node name="Zange" type="Area2D" parent="." unique_id=728074550]
+position = Vector2(274, 1090)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zange" unique_id=122921161]
+position = Vector2(-126, -327)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="FoodSprite" type="Sprite2D" parent="Zange/CollisionShape2D" unique_id=614216962]
+z_index = 1
+position = Vector2(-46.625015, 4)
+scale = Vector2(0.23940462, 0.86507934)
+texture = ExtResource("4_tipki")
+
 [node name="Food" type="Area2D" parent="." unique_id=353692950]
 position = Vector2(137, 545)
-script = ExtResource("3_jyhfs")
 
 [node name="FoodSprite" type="Sprite2D" parent="Food" unique_id=1765252169]
 z_index = 1
@@ -28,5 +68,23 @@ shape = SubResource("RectangleShape2D_sugp2")
 position = Vector2(957.3104, 536.74365)
 scale = Vector2(1.4384458, 1.266642)
 
+[node name="ToolText" type="RichTextLabel" parent="." unique_id=1620848571]
+anchors_preset = -1
+anchor_left = 0.822
+anchor_top = 0.069000006
+anchor_right = 0.822
+anchor_bottom = 0.069000006
+offset_left = -278.24
+offset_top = -36.520004
+offset_right = 279.76
+offset_bottom = 36.479996
+
+[connection signal="mouse_entered" from="Hand" to="." method="_on_hand_mouse_entered"]
+[connection signal="mouse_exited" from="Hand" to="." method="_on_hand_mouse_exited"]
+[connection signal="mouse_entered" from="Brush" to="." method="_on_brush_mouse_entered"]
+[connection signal="mouse_exited" from="Brush" to="." method="_on_brush_mouse_exited"]
+[connection signal="mouse_entered" from="Zange" to="." method="_on_zange_mouse_entered"]
+[connection signal="mouse_exited" from="Zange" to="." method="_on_zange_mouse_exited"]
 [connection signal="input_event" from="Food" to="." method="_on_food_input_event"]
 [connection signal="mouse_entered" from="Food" to="." method="_on_food_mouse_entered"]
+[connection signal="mouse_exited" from="Food" to="." method="_on_food_mouse_exited"]

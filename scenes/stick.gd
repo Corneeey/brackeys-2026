@@ -22,7 +22,9 @@ func _process(delta: float) -> void:
 		alpha -= delta
 
 func _mouse_enter() -> void:
-	if(!DraggableManager.is_currently_dragging_something && !is_dissolving):
+	if(!DraggableManager.is_currently_dragging_something 
+			&& !is_dissolving 
+			&& ToolManager.active_tool == ToolManager.Tool.ZANGE):
 		is_draggable = true
 		scale = Vector2(1.05, 1.05)
 	
