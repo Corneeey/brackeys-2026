@@ -1,8 +1,30 @@
 [gd_scene format=3 uid="uid://bjaldegriam12"]
 
+[ext_resource type="Script" uid="uid://bcukoa831n6oq" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d15otiv7naa7r" path="res://scenes/sheep.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://bxvnadqb2rnvt" path="res://scenes/food.gd" id="3_jyhfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(268, 189)
 
 [node name="Main" type="Node" unique_id=105591987]
+script = ExtResource("1_jyhfs")
 
-[node name="Sprite2D" parent="." unique_id=196554312 instance=ExtResource("1_o5qli")]
+[node name="Food" type="Area2D" parent="." unique_id=353692950]
+position = Vector2(137, 545)
+script = ExtResource("3_jyhfs")
+
+[node name="FoodSprite" type="Sprite2D" parent="Food" unique_id=1765252169]
+z_index = 1
+texture = ExtResource("2_sugp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food" unique_id=944961517]
+position = Vector2(3, -4.5)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="Sheep" parent="." unique_id=196554312 instance=ExtResource("1_o5qli")]
 position = Vector2(575, 319)
+
+[connection signal="input_event" from="Food" to="." method="_on_food_input_event"]
+[connection signal="mouse_entered" from="Food" to="." method="_on_food_mouse_entered"]

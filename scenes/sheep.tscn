@@ -5,7 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://b5xldglsskp0p" path="res://scenes/dirt.tscn" id="3_6qn06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbo3h"]
-size = Vector2(535.4606, 324.06918)
+size = Vector2(161.26443, 163.15724)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5qli"]
+radius = 35.92453
+height = 71.84906
 
 [node name="Sheep" type="Sprite2D" unique_id=196554312]
 scale = Vector2(1.9161074, 1.3361344)
@@ -23,7 +27,14 @@ position = Vector2(150.30473, -17.213837)
 position = Vector2(-4.1751313, -27.317616)
 shape = SubResource("RectangleShape2D_vbo3h")
 
+[node name="SheepMouth" type="Area2D" parent="." unique_id=49057151]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SheepMouth" unique_id=1294641180]
+position = Vector2(-221.28197, -76.33963)
+shape = SubResource("CapsuleShape2D_o5qli")
+
 [connection signal="mouse_entered" from="Dirt" to="." method="_on_dirt_mouse_entered"]
 [connection signal="mouse_exited" from="Dirt" to="." method="_on_dirt_mouse_exited"]
 [connection signal="mouse_entered" from="SheepBody" to="." method="_on_sheep_body_mouse_entered"]
 [connection signal="mouse_exited" from="SheepBody" to="." method="_on_sheep_body_mouse_exited"]
+[connection signal="mouse_entered" from="SheepMouth" to="." method="_on_sheep_mouth_mouse_entered"]
