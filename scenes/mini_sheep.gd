@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const SHEEP_SCENE = preload("uid://cloubojbr302y")
+
 @export var speed = 100
 
 @export var max_y = 600
