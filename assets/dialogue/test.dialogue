@@ -3,6 +3,8 @@ Polyphemus: Grüß Gott <3
 Nobody: Ja moinsen. (Willst du Polyphemus daten?)
 - Ja
 	Nobody: You daten Manni now
+	$> ScoreManager.resolve_good_answer()
 - Nein
 	Nobody: AugenStecher.png 
+	$> ScoreManager.resolve_evil_answer()
 => END
