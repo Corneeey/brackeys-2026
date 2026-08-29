@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var is_in_hover_on_body = false 
+var is_in_hover_on_body = false
 
 func _ready() -> void:
 	SheepManager.sheep_body = $SheepBody
@@ -22,4 +22,3 @@ func _input(event: InputEvent) -> void:
 			&& is_in_hover_on_body 
 			&& ToolManager.active_tool == ToolManager.Tool.HAND):
 		ScoreManager.score += ScoreManager.scratch_score_per_movement
-			

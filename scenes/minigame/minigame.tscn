@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d15otiv7naa7r" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(268, 189)
+size = Vector2(268, 175.5)
 
 [node name="Minigame" type="Node2D" unique_id=1154409392]
 script = ExtResource("1_suo05")
@@ -43,13 +43,13 @@ texture = ExtResource("2_suo05")
 position = Vector2(274, 1090)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zange" unique_id=1692943133]
-position = Vector2(-126, -327)
+position = Vector2(-126, -320.25)
 shape = SubResource("RectangleShape2D_sugp2")
 
 [node name="FoodSprite" type="Sprite2D" parent="Zange/CollisionShape2D" unique_id=1478783323]
 z_index = 1
-position = Vector2(-46.625015, 4)
-scale = Vector2(0.23940462, 0.86507934)
+position = Vector2(-14.625017, 4)
+scale = Vector2(0.30398583, 0.86507934)
 texture = ExtResource("3_x8ymt")
 
 [node name="Food" type="Area2D" parent="." unique_id=105522491]
@@ -68,13 +68,15 @@ shape = SubResource("RectangleShape2D_sugp2")
 position = Vector2(957.3104, 536.74365)
 scale = Vector2(1.4384458, 1.266642)
 
-[node name="ToolText" type="RichTextLabel" parent="." unique_id=1770884940]
-anchors_preset = -1
-anchor_left = 0.822
-anchor_top = 0.069000006
-anchor_right = 0.822
-anchor_bottom = 0.069000006
-offset_left = 1300.0
-offset_top = 38.0
-offset_right = 1858.0
-offset_bottom = 111.0
+[node name="Cursor" type="Sprite2D" parent="." unique_id=749678793]
+visible = false
+texture = ExtResource("1_a7b5v")
+
+[connection signal="mouse_entered" from="Hand" to="." method="_on_hand_mouse_entered"]
+[connection signal="mouse_exited" from="Hand" to="." method="_on_hand_mouse_exited"]
+[connection signal="mouse_entered" from="Brush" to="." method="_on_brush_mouse_entered"]
+[connection signal="mouse_exited" from="Brush" to="." method="_on_brush_mouse_exited"]
+[connection signal="mouse_entered" from="Zange" to="." method="_on_zange_mouse_entered"]
+[connection signal="mouse_exited" from="Zange" to="." method="_on_zange_mouse_exited"]
+[connection signal="mouse_entered" from="Food" to="." method="_on_food_mouse_entered"]
+[connection signal="mouse_exited" from="Food" to="." method="_on_food_mouse_exited"]
