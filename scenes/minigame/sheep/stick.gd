@@ -1,4 +1,4 @@
-extends Area2D
+class_name Stick extends Area2D
 
 var is_draggable = false
 var offset : Vector2
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 			DraggableManager.is_currently_dragging_something = false
 			if(!self.overlaps_area(SheepManager.sheep_body)):
 				is_dissolving = true
-				ScoreManager.score += ScoreManager.remove_stick_score
+				ScoreManager.current_remove_stick_score += ScoreManager.remove_stick_score
 	if(is_dissolving):
 		self.modulate = Color(self.modulate, alpha)
 		alpha -= delta

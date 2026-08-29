@@ -25,6 +25,7 @@ position = Vector2(961, 536)
 texture = ExtResource("2_x8ymt")
 
 [node name="Hand" type="Area2D" parent="." unique_id=1767583581]
+visible = false
 position = Vector2(1096, 4360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand" unique_id=1726530529]
@@ -38,6 +39,7 @@ scale = Vector2(0.323375, 0.29909396)
 texture = ExtResource("1_a7b5v")
 
 [node name="Brush" type="Area2D" parent="." unique_id=1611055017]
+visible = false
 position = Vector2(548, 2180)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brush" unique_id=820862874]
@@ -51,6 +53,7 @@ scale = Vector2(0.205, 0.177)
 texture = ExtResource("2_suo05")
 
 [node name="Zange" type="Area2D" parent="." unique_id=111970077]
+visible = false
 position = Vector2(274, 1090)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zange" unique_id=1692943133]
@@ -64,6 +67,7 @@ scale = Vector2(0.30398583, 0.86507934)
 texture = ExtResource("3_x8ymt")
 
 [node name="Food" type="Area2D" parent="." unique_id=105522491]
+visible = false
 position = Vector2(137, 545)
 
 [node name="FoodSprite" type="Sprite2D" parent="Food" unique_id=295563156]
