@@ -13,6 +13,10 @@
 [ext_resource type="AudioStream" uid="uid://dehapqxufu8mh" path="res://assets/sfx/cyclops_voice/cyclops_voice_1.wav" id="11_2wkrx"]
 [ext_resource type="AudioStream" uid="uid://bpjcly6umhgwl" path="res://assets/sfx/cyclops_voice/cyclops_voice_2.wav" id="12_i8jwa"]
 [ext_resource type="AudioStream" uid="uid://d0stmq22hylxc" path="res://assets/sfx/cyclops_voice/cyclops_voice_3.wav" id="13_ru8uc"]
+[ext_resource type="AudioStream" uid="uid://bfcgsf3h2bdsc" path="res://assets/sfx/cyclops_voice/cyclops_voice_4.wav" id="14_ggdok"]
+[ext_resource type="AudioStream" uid="uid://bfyfq5lg7ed6f" path="res://assets/sfx/cyclops_voice/cyclops_voice_5.wav" id="15_75d2m"]
+[ext_resource type="AudioStream" uid="uid://di7tpyw5ungyr" path="res://assets/sfx/cyclops_voice/cyclops_voice_6.wav" id="16_f73x8"]
+[ext_resource type="AudioStream" uid="uid://cddahhf7fahdo" path="res://assets/sfx/cyclops_voice/cyclops_voice_7.wav" id="17_fqdk3"]
 
 [node name="DialogueScene" type="Control" unique_id=1716834809]
 layout_mode = 3
@@ -33,5 +37,5 @@ talking_speed = 0.16
 [node name="PolyphemusPlayer" type="AudioStreamPlayer" parent="." unique_id=1645492345]
 bus = &"Sound"
 script = ExtResource("3_ag5m8")
-sound_bites = Array[AudioStream]([ExtResource("11_2wkrx"), ExtResource("12_i8jwa"), ExtResource("13_ru8uc")])
+sound_bites = Array[AudioStream]([ExtResource("11_2wkrx"), ExtResource("12_i8jwa"), ExtResource("13_ru8uc"), ExtResource("14_ggdok"), ExtResource("15_75d2m"), ExtResource("16_f73x8"), ExtResource("17_fqdk3")])
 talking_speed = 0.16
