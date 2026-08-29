@@ -18,9 +18,14 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 ScoreManager="*uid://nfvhqspm6gyy"
+DialogueManager="*uid://c3rodes2l3gxb"
 DraggableManager="*uid://d25ecwnfu840h"
 SheepManager="*uid://dblbrkojlyuwu"
 ToolManager="*uid://dil1n5cx11bwu"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_screen.tscn"
 
 [display]
 
@@ -28,6 +33,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
