@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WiesenData" format=3 uid="uid://q44ae8a5xgmb"]
+
+[ext_resource type="Script" uid="uid://co02ldvveil3d" path="res://types/wiesen_data.gd" id="1_mie5v"]
+
+[resource]
+script = ExtResource("1_mie5v")
+minigame_has_streicheln = false
+sheep_count = 2
+metadata/_custom_type_script = "uid://co02ldvveil3d"

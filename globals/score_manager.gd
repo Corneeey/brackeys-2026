@@ -1,43 +1,27 @@
 extends Node
 
-@export_range(0, 50)
-var dirt_clean_score = 10
+#Änderungwerte
+var scratch_score_per_movement = 0.1
+var remove_stick_score = 75
+var feed_food_score = 75
+var dirt_clean_score = 50
+var answer_change = 200
 
-@export_range(0, 50)
-var max_dirt_clean_score_per_sheep = 10
+#max-Werte
+var max_score = 4000
+var max_score_per_sheep = 500
 
-var current_dirt_score = 0
+#max-Werte pro Schaf
+var max_scratch_score_per_sheep = 100
+var max_feed_food_score_per_sheep = 150
+var max_dirt_clean_score_per_sheep = 250
+var max_remove_stick_score_per_sheep = 150
 
-@export_range(0, 50)
-var feed_food_score = 5
-
-@export_range(0, 50)
-var max_feed_food_score_per_sheep = 5
-
+#dynamically filled values
 var current_food_score = 0
-
-@export_range(0, 50)
-var remove_stick_score = 15
-
-@export_range(0, 50)
-var max_remove_stick_score_per_sheep = 15
-
-var current_remove_stick_score = 0
-
-@export_range(0, 1)
-var scratch_score_per_movement = 0.001
-
-@export_range(0, 50)
-var max_scratch_score_per_sheep = 10
-
 var current_scratch_score = 0
-
-@export_range(0, 5000)
-var max_score = 2000
-
-@export_range(0, 5000)
-var max_score_per_sheep = 300
-
+var current_remove_stick_score = 0
+var current_dirt_score = 0
 var score = 0
 
 func get_score_percentage():
@@ -55,7 +39,13 @@ func finish_sheep():
 	current_food_score = 0
 	current_remove_stick_score = 0
 	current_scratch_score = 0
-
+	
+func resolve_evil_answert() -> void:
+	score -= answer_change
+	
+func resolve_good_answert() -> void:
+	score += answer_change
+	
 func _process(_delta: float) -> void:
 	pass
 	#print("Score: ", score)

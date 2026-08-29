@@ -25,11 +25,13 @@ script = ExtResource("1_fnfxh")
 dialogue_resource = ExtResource("2_ag5m8")
 
 [node name="OdysseusPlayer" type="AudioStreamPlayer" parent="." unique_id=1098106121]
+bus = &"Sound"
 script = ExtResource("3_ag5m8")
 sound_bites = Array[AudioStream]([ExtResource("4_g0fu7"), ExtResource("5_y6kgr"), ExtResource("6_k4vy7"), ExtResource("7_xqy8t"), ExtResource("8_3n2u6"), ExtResource("9_3okhx"), ExtResource("10_832bo")])
 talking_speed = 0.16
 
 [node name="PolyphemusPlayer" type="AudioStreamPlayer" parent="." unique_id=1645492345]
+bus = &"Sound"
 script = ExtResource("3_ag5m8")
 sound_bites = Array[AudioStream]([ExtResource("11_2wkrx"), ExtResource("12_i8jwa"), ExtResource("13_ru8uc")])
 talking_speed = 0.16
