@@ -10,6 +10,7 @@ const MINIGAME_SCENE = preload("res://scenes/minigame/minigame.tscn")
 @export var minigame_has_stoecker = true
 @export var minigame_has_dreck = true
 @export var sheep_count = 4
+@export var clean_sheep_count = 2
 
 func _ready() -> void:
 	MinigameLevelManager.minigame_has_dreck = minigame_has_dreck
@@ -18,6 +19,10 @@ func _ready() -> void:
 	MinigameLevelManager.minigame_has_streicheln = minigame_has_streicheln
 	for i in sheep_count:
 		spawn_mini_sheep()
+	
+	for i in clean_sheep_count:
+		var mini_sheep := spawn_mini_sheep()
+		mini_sheep.clean_sheep()
 
 func _get_rect() -> Rect2:
 	var rect: Rect2 = $SheepArea/CollisionShape2D.shape.get_rect()
