@@ -1,7 +1,7 @@
 extends Node
 
 const DIALOGUE_SCENE = preload("uid://beviupxr7gc7m")
-const MINIGAME_SCENE = preload("uid://df5v1pyor3f36")
+const MINIGAME_SCENE = preload("uid://bdt40p7g0phkq")
 
 var game_steps = [
 	preload("res://assets/dialogue/dialogue_1.dialogue"),
