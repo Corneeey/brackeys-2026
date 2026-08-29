@@ -15,11 +15,9 @@ texture = ExtResource("1_nh37d")
 script = ExtResource("2_nh37d")
 
 [node name="Dirt" parent="." unique_id=1317732654 instance=ExtResource("3_ti8yq")]
-script = null
 
 [node name="Dirt2" parent="." unique_id=2043107964 instance=ExtResource("3_ti8yq")]
 position = Vector2(150.30473, -17.213837)
-script = null
 
 [node name="SheepBody" type="Area2D" parent="." unique_id=1520218605]
 
@@ -35,12 +33,10 @@ shape = SubResource("CapsuleShape2D_o5qli")
 [node name="Stick" parent="." unique_id=1770781443 instance=ExtResource("4_5s13y")]
 position = Vector2(-121.0788, -64.36477)
 rotation = 3.0130897
-script = null
 
 [node name="Stick2" parent="." unique_id=574677491 instance=ExtResource("4_5s13y")]
 position = Vector2(455.61115, 77.088036)
 rotation = 3.0130897
-script = null
 
 [connection signal="mouse_entered" from="SheepBody" to="." method="_on_sheep_body_mouse_entered"]
 [connection signal="mouse_exited" from="SheepBody" to="." method="_on_sheep_body_mouse_exited"]
