@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dwd8jaiy3cym2" path="res://scenes/wiese/wiese.gd" id="1_yom36"]
 [ext_resource type="Texture2D" uid="uid://dbbwjsshj3f4g" path="res://assets/minigame/bg_mg.png" id="2_yom36"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yom36"]
+size = Vector2(1240.5, 851.5)
+
 [node name="Wiese" type="Node2D" unique_id=1148491611]
 script = ExtResource("1_yom36")
 
@@ -19,5 +22,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 48
 text = "Done caring for Sheep"
+
+[node name="SheepArea" type="Area2D" parent="." unique_id=988710979]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SheepArea" unique_id=1075125490]
+position = Vector2(751, 512)
+shape = SubResource("RectangleShape2D_yom36")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
