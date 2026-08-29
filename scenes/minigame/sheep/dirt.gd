@@ -6,6 +6,9 @@ var is_hovering = false
 var dirt_alpha = 1
 var is_scored = false
 
+@export_range(0, 0.1)
+var dirt_remove_speed = 0.025
+
 @export var which_dirt = "head"
 
 @onready var dirt_head = $DirtHead
@@ -53,7 +56,7 @@ func is_brushing(event: InputEvent) -> bool:
 
 func apply_brush() -> void:
 	self.modulate = Color(self.modulate, dirt_alpha)
-	dirt_alpha -= 0.008
+	dirt_alpha -= dirt_remove_speed
 	brushed.emit()
 
 func clear_dirt() -> void:
