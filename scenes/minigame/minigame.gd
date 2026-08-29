@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var currently_hovered_tool : ToolManager.Tool = ToolManager.Tool.NONE
 var is_hovering_anything = false
@@ -37,7 +37,7 @@ func _on_hand_mouse_entered() -> void:
 func _on_hand_mouse_exited() -> void:
 	is_hovering_anything = false
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("drag")):
 		ToolManager.active_tool = currently_hovered_tool
 		tool_text.text = ToolManager.get_name_for_tool(currently_hovered_tool)
