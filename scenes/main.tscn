@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bjaldegriam12"]
 
-[ext_resource type="PackedScene" uid="uid://df5v1pyor3f36" path="res://scenes/minigame/minigame.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bdt40p7g0phkq" path="res://scenes/wiese.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://d2t75xso5ieoc" path="res://scenes/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b0xdbd5kjd1g" path="res://scenes/main_menu/main_menu.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node" unique_id=105591987]
+script = ExtResource("1_jyhfs")
 
-[node name="Minigame" parent="." unique_id=1154409392 instance=ExtResource("2_0wfyh")]
-visible = false
+[node name="MainMenu" parent="." unique_id=704655114 instance=ExtResource("3_sugp2")]
 
-[node name="Wiese" parent="." unique_id=1148491611 instance=ExtResource("2_sugp2")]
+[connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]
