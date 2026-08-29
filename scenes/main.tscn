@@ -12,6 +12,5 @@ script = ExtResource("1_jyhfs")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=223320665]
 stream = ExtResource("3_jyhfs")
 autoplay = true
-bus = &"Music"
 
 [connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]

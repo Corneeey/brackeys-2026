@@ -40,10 +40,10 @@ func finish_sheep():
 	current_remove_stick_score = 0
 	current_scratch_score = 0
 	
-func resolve_evil_answert() -> void:
+func resolve_evil_answer() -> void:
 	score -= answer_change
 	
-func resolve_good_answert() -> void:
+func resolve_good_answer() -> void:
 	score += answer_change
 	
 func _process(_delta: float) -> void:
