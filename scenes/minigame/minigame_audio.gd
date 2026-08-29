@@ -3,7 +3,8 @@ class_name MinigameAudio extends AudioStreamPlayer
 enum AudioEvent {
 	BRUSHED,
 	CARROT_FED,
-	PETTED
+	PETTED,
+	STICK_REMOVED
 	}
 
 @export var audio_bundles: Dictionary[AudioEvent, AudioBundle] = {}

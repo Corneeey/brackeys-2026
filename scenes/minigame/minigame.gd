@@ -3,20 +3,20 @@ extends Node2D
 var currently_hovered_tool : ToolManager.Tool = ToolManager.Tool.NONE
 var is_hovering_anything = false
 
-@onready var cursor_img = $Cursor
+@onready var cursor_img : Sprite2D = $Cursor
 @onready var sheep = $Sheep
 
-@onready var texture_brush : Texture2D = load("res://assets/brush.webp")
-@onready var texture_hand : Texture2D = load("res://assets/hand.png")
-@onready var texture_zange : Texture2D = load("res://assets/zange.png")
-@onready var texture_karrote : Texture2D = load("res://assets/340.webp")
+@onready var mouse_texture_brush : Texture2D = load("res://assets/minigame/tools/brush.png")
+@onready var mouse_texture_hand : Texture2D = load("res://assets/minigame/tools/hand.png")
+@onready var mouse_texture_zange : Texture2D = load("res://assets/minigame/tools/comb.png")
+@onready var mouse_texture_karrote : Texture2D = load("res://assets/minigame/tools/carrot_01.png")
 
 @onready var minigame_audio: MinigameAudio = $MinigameAudio
 
-@onready var hand_tool = $Hand
-@onready var brush_tool = $Brush
-@onready var zange_tool = $Zange
-@onready var food_tool = $Food
+@onready var hand_tool = $HandButton
+@onready var brush_tool = $BrushButton
+@onready var zange_tool = $CombButton
+@onready var food_tool = $FoodButton
 
 func _ready() -> void:
 	ToolManager.ate_food.connect(_on_ate_food)
@@ -33,6 +33,7 @@ func _ready() -> void:
 func _connect_sheep_signals() -> void:
 	sheep.brushed.connect(_on_sheep_brushed)
 	sheep.petted.connect(_on_sheep_petted)
+	sheep.stick_removed.connect(_on_stick_removed)
 
 func _on_sheep_brushed() -> void:
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.BRUSHED)
@@ -40,63 +41,80 @@ func _on_sheep_brushed() -> void:
 func _on_sheep_petted() -> void:
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.PETTED)
 
-# FOOD
-func _on_food_mouse_entered() -> void:
-	currently_hovered_tool = ToolManager.Tool.KAROTTE
-	is_hovering_anything = true
+func _on_stick_removed() -> void:
+	minigame_audio.play_audio(MinigameAudio.AudioEvent.STICK_REMOVED)
 
-func _on_food_mouse_exited() -> void:
-	is_hovering_anything = false
+func _on_hand_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on):
+		cursor_img.texture = mouse_texture_hand
+		brush_tool.button_pressed = false
+		zange_tool.button_pressed = false
+		food_tool.button_pressed = false
+		ToolManager.active_tool = ToolManager.Tool.HAND
+		do_cursor_stuff(true)
+	else:
+		ToolManager.active_tool = ToolManager.Tool.NONE
+		do_cursor_stuff(false)
 
-#ZANGE
-func _on_zange_mouse_entered() -> void:
-	currently_hovered_tool = ToolManager.Tool.ZANGE # Replace with function body.
-	is_hovering_anything = true
+func _on_brush_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on):
+		cursor_img.texture = mouse_texture_brush
+		hand_tool.button_pressed = false
+		zange_tool.button_pressed = false
+		food_tool.button_pressed = false
+		ToolManager.active_tool = ToolManager.Tool.BRUSH
+		do_cursor_stuff(true)
+	else:
+		ToolManager.active_tool = ToolManager.Tool.NONE
+		do_cursor_stuff(false)
 
-func _on_zange_mouse_exited() -> void:
-	is_hovering_anything = false
-
-#BRUSH
-func _on_brush_mouse_entered() -> void:
-	currently_hovered_tool = ToolManager.Tool.BRUSH
-	is_hovering_anything = true
-
-func _on_brush_mouse_exited() -> void:
-	is_hovering_anything = false
-
-#HAND
-func _on_hand_mouse_entered() -> void:
-	currently_hovered_tool = ToolManager.Tool.HAND
-	is_hovering_anything = true
-
-func _on_hand_mouse_exited() -> void:
-	is_hovering_anything = false
-	
-func _process(_delta: float) -> void:
-	if(Input.is_action_just_pressed("drag")):
-		ToolManager.active_tool = currently_hovered_tool
-		if(currently_hovered_tool == ToolManager.Tool.HAND):
-			cursor_img.texture = texture_hand
-			cursor_img.visible = true
-		elif(currently_hovered_tool == ToolManager.Tool.ZANGE):
-			cursor_img.texture = texture_zange
-			cursor_img.visible = true
-		elif(currently_hovered_tool == ToolManager.Tool.KAROTTE):
-			cursor_img.texture = texture_karrote
-			cursor_img.visible = true
-		elif(currently_hovered_tool == ToolManager.Tool.BRUSH):
-			cursor_img.texture = texture_brush
-			cursor_img.visible = true
-		else:
-			cursor_img.visible = false
+func _on_food_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on):
+		cursor_img.texture = mouse_texture_karrote
+		hand_tool.button_pressed = false
+		brush_tool.button_pressed = false
+		zange_tool.button_pressed = false
+		ToolManager.active_tool = ToolManager.Tool.KAROTTE
+		do_cursor_stuff(true)
+	else:
+		ToolManager.active_tool = ToolManager.Tool.NONE
+		do_cursor_stuff(false)
 		
-	cursor_img.global_position = get_global_mouse_position()
-	
+func _on_comb_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on):
+		cursor_img.texture = mouse_texture_zange
+		hand_tool.button_pressed = false
+		brush_tool.button_pressed = false
+		food_tool.button_pressed = false
+		ToolManager.active_tool = ToolManager.Tool.ZANGE
+		do_cursor_stuff(true)
+		cursor_img.scale = Vector2(0.5, 0.5)
+	else:
+		ToolManager.active_tool = ToolManager.Tool.NONE
+		do_cursor_stuff(false)
+		cursor_img.scale = Vector2(0.8, 0.8)
+		
 func _on_ate_food():
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.CARROT_FED)
 	cursor_img.visible = false
+	food_tool.button_pressed = false
+	ScoreManager.current_food_score += ScoreManager.feed_food_score
+	ToolManager.active_tool = ToolManager.Tool.NONE
+	do_cursor_stuff(false)
 
 func _on_quit_minigame_pressed() -> void:
 	ScoreManager.finish_sheep()
 	SheepManager.is_sheep_minigame_open = false
+	do_cursor_stuff(false)
 	self.queue_free()
+
+func _process(_delta: float) -> void:
+	cursor_img.global_position = get_global_mouse_position()
+	
+func do_cursor_stuff(visible):
+	if(visible):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+		cursor_img.visible = true
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		cursor_img.visible = false

@@ -1,90 +1,77 @@
 [gd_scene format=3 uid="uid://df5v1pyor3f36"]
 
-[ext_resource type="Texture2D" uid="uid://lwvk58qfplta" path="res://assets/hand.png" id="1_a7b5v"]
 [ext_resource type="Script" uid="uid://bcukoa831n6oq" path="res://scenes/minigame/minigame.gd" id="1_suo05"]
-[ext_resource type="Texture2D" uid="uid://c1mo027bjmnsw" path="res://assets/brush.webp" id="2_suo05"]
 [ext_resource type="Texture2D" uid="uid://dbbwjsshj3f4g" path="res://assets/minigame/bg_mg.png" id="2_x8ymt"]
-[ext_resource type="Texture2D" uid="uid://do1bu07rimj8g" path="res://assets/zange.png" id="3_x8ymt"]
-[ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="4_wph28"]
+[ext_resource type="Texture2D" uid="uid://b5lryt04r7njm" path="res://assets/ui/mg_sheep/border_mg_sheep.png" id="3_yn1os"]
+[ext_resource type="Texture2D" uid="uid://udxaesqfjnd3" path="res://assets/ui/mg_sheep/buttons/button_hand_dark.png" id="4_al4os"]
 [ext_resource type="PackedScene" uid="uid://bvx0t6uoc7sl2" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
+[ext_resource type="Texture2D" uid="uid://c66adyagcrxn1" path="res://assets/ui/mg_sheep/buttons/button_hand_light.png" id="5_j6hl7"]
+[ext_resource type="Texture2D" uid="uid://4ioihjoesua6" path="res://assets/ui/mg_sheep/buttons/button_brush_light.png" id="6_b7ekc"]
+[ext_resource type="Texture2D" uid="uid://pcs6vxb3odjh" path="res://assets/ui/mg_sheep/buttons/button_brush_dark.png" id="7_7monl"]
 [ext_resource type="Script" uid="uid://duavaw2ldoux3" path="res://scenes/minigame/minigame_audio.gd" id="7_x8ymt"]
+[ext_resource type="Texture2D" uid="uid://crakx2t1bi4f" path="res://assets/ui/mg_sheep/buttons/button_comb_dark.png" id="8_6f0bu"]
 [ext_resource type="Script" uid="uid://bojxyftafuv1a" path="res://types/audio_bundle.gd" id="8_8k6tk"]
+[ext_resource type="Texture2D" uid="uid://be1aduhrv1tth" path="res://assets/ui/mg_sheep/buttons/button_comb_light.png" id="9_8as1d"]
 [ext_resource type="Resource" uid="uid://dipogsgnd74di" path="res://assets/sfx/brush/brush.tres" id="9_8k6tk"]
 [ext_resource type="Resource" uid="uid://cts8kdws8leo0" path="res://assets/sfx/carrot_crunch/carrot_crunch.tres" id="9_r3185"]
+[ext_resource type="Texture2D" uid="uid://bb0te00c6uelv" path="res://assets/ui/mg_sheep/buttons/button_carrot_dark.png" id="10_5h6cm"]
+[ext_resource type="Texture2D" uid="uid://6j3jdwi1pkrr" path="res://assets/ui/mg_sheep/buttons/button_carrot_light.png" id="11_4d6bl"]
 [ext_resource type="Resource" uid="uid://cjt8r343hldcl" path="res://assets/sfx/sheep/sheep.tres" id="12_ms23d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(268, 175.5)
+[ext_resource type="Resource" uid="uid://c3w4hx2r2mswy" path="res://assets/sfx/stick_remove/stick_remove.tres" id="18_al4os"]
 
 [node name="Minigame" type="Node2D" unique_id=1154409392]
 script = ExtResource("1_suo05")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=973364904]
-position = Vector2(961, 536)
+position = Vector2(960, 540)
 texture = ExtResource("2_x8ymt")
 
-[node name="Hand" type="Area2D" parent="." unique_id=1767583581]
-visible = false
-position = Vector2(1096, 4360)
+[node name="Boder" type="Sprite2D" parent="." unique_id=292209058]
+position = Vector2(960, 540)
+texture = ExtResource("3_yn1os")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand" unique_id=1726530529]
-position = Vector2(-642, -3361)
-shape = SubResource("RectangleShape2D_sugp2")
+[node name="HandButton" type="TextureButton" parent="." unique_id=825310684]
+offset_left = 1290.0
+offset_top = 922.0
+offset_right = 1441.0
+offset_bottom = 1085.0
+toggle_mode = true
+texture_normal = ExtResource("4_al4os")
+texture_pressed = ExtResource("5_j6hl7")
 
-[node name="FoodSprite" type="Sprite2D" parent="Hand/CollisionShape2D" unique_id=1011883880]
-z_index = 1
-position = Vector2(-2.4799957, -4.7100296)
-scale = Vector2(0.323375, 0.29909396)
-texture = ExtResource("1_a7b5v")
+[node name="BrushButton" type="TextureButton" parent="." unique_id=1981448791]
+offset_left = 748.0
+offset_top = 919.0
+offset_right = 902.0
+offset_bottom = 1084.0
+toggle_mode = true
+texture_normal = ExtResource("7_7monl")
+texture_pressed = ExtResource("6_b7ekc")
 
-[node name="Brush" type="Area2D" parent="." unique_id=1611055017]
-visible = false
-position = Vector2(548, 2180)
+[node name="CombButton" type="TextureButton" parent="." unique_id=1979557866]
+offset_left = 1018.0
+offset_top = 916.0
+offset_right = 1169.0
+offset_bottom = 1081.0
+toggle_mode = true
+texture_normal = ExtResource("8_6f0bu")
+texture_pressed = ExtResource("9_8as1d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Brush" unique_id=820862874]
-position = Vector2(640, -1146)
-shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="FoodSprite" type="Sprite2D" parent="Brush/CollisionShape2D" unique_id=1600181366]
-z_index = 1
-position = Vector2(4, -2)
-scale = Vector2(0.205, 0.177)
-texture = ExtResource("2_suo05")
-
-[node name="Zange" type="Area2D" parent="." unique_id=111970077]
-visible = false
-position = Vector2(274, 1090)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Zange" unique_id=1692943133]
-position = Vector2(-126, -320.25)
-shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="FoodSprite" type="Sprite2D" parent="Zange/CollisionShape2D" unique_id=1478783323]
-z_index = 1
-position = Vector2(-14.625017, 4)
-scale = Vector2(0.30398583, 0.86507934)
-texture = ExtResource("3_x8ymt")
-
-[node name="Food" type="Area2D" parent="." unique_id=105522491]
-visible = false
-position = Vector2(137, 545)
-
-[node name="FoodSprite" type="Sprite2D" parent="Food" unique_id=295563156]
-z_index = 1
-position = Vector2(37, 423)
-texture = ExtResource("4_wph28")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food" unique_id=1230046528]
-position = Vector2(14, 426)
-shape = SubResource("RectangleShape2D_sugp2")
+[node name="FoodButton" type="TextureButton" parent="." unique_id=1246112466]
+offset_left = 480.0
+offset_top = 918.0
+offset_right = 631.0
+offset_bottom = 1083.0
+toggle_mode = true
+texture_normal = ExtResource("10_5h6cm")
+texture_pressed = ExtResource("11_4d6bl")
 
 [node name="Sheep" parent="." unique_id=196554312 instance=ExtResource("5_8k6tk")]
-position = Vector2(957.3104, 536.74365)
-scale = Vector2(1.4384458, 1.266642)
+position = Vector2(927, 488.00006)
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=749678793]
 visible = false
-texture = ExtResource("1_a7b5v")
+scale = Vector2(0.7, 0.7)
 
 [node name="QuitMinigame" type="Button" parent="." unique_id=1753550150]
 offset_left = 1623.0
@@ -98,15 +85,12 @@ script = ExtResource("7_x8ymt")
 audio_bundles = Dictionary[int, ExtResource("8_8k6tk")]({
 0: ExtResource("9_8k6tk"),
 1: ExtResource("9_r3185"),
-2: ExtResource("12_ms23d")
+2: ExtResource("12_ms23d"),
+3: ExtResource("18_al4os")
 })
 
-[connection signal="mouse_entered" from="Hand" to="." method="_on_hand_mouse_entered"]
-[connection signal="mouse_exited" from="Hand" to="." method="_on_hand_mouse_exited"]
-[connection signal="mouse_entered" from="Brush" to="." method="_on_brush_mouse_entered"]
-[connection signal="mouse_exited" from="Brush" to="." method="_on_brush_mouse_exited"]
-[connection signal="mouse_entered" from="Zange" to="." method="_on_zange_mouse_entered"]
-[connection signal="mouse_exited" from="Zange" to="." method="_on_zange_mouse_exited"]
-[connection signal="mouse_entered" from="Food" to="." method="_on_food_mouse_entered"]
-[connection signal="mouse_exited" from="Food" to="." method="_on_food_mouse_exited"]
+[connection signal="toggled" from="HandButton" to="." method="_on_hand_button_toggled"]
+[connection signal="toggled" from="BrushButton" to="." method="_on_brush_button_toggled"]
+[connection signal="toggled" from="CombButton" to="." method="_on_comb_button_toggled"]
+[connection signal="toggled" from="FoodButton" to="." method="_on_food_button_toggled"]
 [connection signal="pressed" from="QuitMinigame" to="." method="_on_quit_minigame_pressed"]

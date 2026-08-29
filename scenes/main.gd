@@ -10,8 +10,10 @@ const MINIGAME_SCENE = preload("uid://bo8bqu8f3i8lc")
 var game_steps = [
 	preload("res://assets/dialogue/dialogue_1.dialogue"),
 	preload("res://assets/wiesen/wiese_1.tres"),
-	preload("res://assets/dialogue/test.dialogue"),
-	preload("res://assets/wiesen/wiese_2.tres")
+	preload("res://assets/dialogue/dialogue_2.dialogue"),
+	preload("res://assets/wiesen/wiese_2.tres"),
+	preload("res://assets/dialogue/dialogue_3.dialogue"),
+	preload("res://assets/dialogue/dialogue_4.dialogue")
 ]
 
 func load_next() -> void:

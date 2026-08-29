@@ -1,5 +1,7 @@
 class_name Stick extends Area2D
 
+signal stick_removed
+
 var is_draggable = false
 var offset : Vector2
 
@@ -16,18 +18,23 @@ func _process(delta: float) -> void:
 		elif(Input.is_action_just_released("drag")):
 			DraggableManager.is_currently_dragging_something = false
 			if(!self.overlaps_area(SheepManager.sheep_body)):
-				is_dissolving = true
-				ScoreManager.current_remove_stick_score += ScoreManager.remove_stick_score
+				trigger_stick_removal()
+
 	if(is_dissolving):
 		self.modulate = Color(self.modulate, alpha)
 		alpha -= delta
+
+func trigger_stick_removal() -> void:
+	stick_removed.emit()
+	is_dissolving = true
+	ScoreManager.current_remove_stick_score += ScoreManager.remove_stick_score
 
 func _mouse_enter() -> void:
 	if(!DraggableManager.is_currently_dragging_something 
 			&& !is_dissolving 
 			&& ToolManager.active_tool == ToolManager.Tool.ZANGE):
 		is_draggable = true
-		scale = Vector2(1.05, 1.05)
+		scale = Vector2(1.1, 1.1)
 	
 func _mouse_exit() -> void:
 	if(!DraggableManager.is_currently_dragging_something):
