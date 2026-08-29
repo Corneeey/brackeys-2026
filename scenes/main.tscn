@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjaldegriam12"]
 
 [ext_resource type="Script" uid="uid://d2t75xso5ieoc" path="res://scenes/main.gd" id="1_jyhfs"]
-[ext_resource type="AudioStream" uid="uid://ddhbnssdlihyx" path="res://assets/music/dating.mp3" id="3_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://cqx1ynfb8130s" path="res://assets/music/menu_as_nolan_intended.mp3" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b0xdbd5kjd1g" path="res://scenes/main_menu/main_menu.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node" unique_id=105591987]
