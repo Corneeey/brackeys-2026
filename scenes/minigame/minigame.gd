@@ -111,8 +111,8 @@ func _on_quit_minigame_pressed() -> void:
 func _process(_delta: float) -> void:
 	cursor_img.global_position = get_global_mouse_position()
 	
-func do_cursor_stuff(visible):
-	if(visible):
+func do_cursor_stuff(_visible):
+	if(_visible):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 		cursor_img.visible = true
 	else:
