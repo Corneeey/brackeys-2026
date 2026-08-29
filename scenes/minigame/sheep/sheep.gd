@@ -2,6 +2,7 @@ extends Sprite2D
 
 signal brushed
 signal petted
+signal stick_removed
 
 var is_in_hover_on_body = false 
 
@@ -20,6 +21,8 @@ func _connect_dirt_signals() -> void:
 func _take_care_of_stick() -> void:
 	for child in get_children():
 		if child is Stick:
+			child.stick_removed.connect(stick_removed.emit)
+			
 			if(MinigameLevelManager.minigame_has_stoecker):
 				child.visible = true
 
