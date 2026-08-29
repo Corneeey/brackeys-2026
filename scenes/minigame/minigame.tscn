@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://lwvk58qfplta" path="res://assets/hand.png" id="1_a7b5v"]
 [ext_resource type="Script" uid="uid://bcukoa831n6oq" path="res://scenes/minigame/minigame.gd" id="1_suo05"]
 [ext_resource type="Texture2D" uid="uid://c1mo027bjmnsw" path="res://assets/brush.webp" id="2_suo05"]
+[ext_resource type="Texture2D" uid="uid://dbbwjsshj3f4g" path="res://assets/minigame/bg_mg.png" id="2_x8ymt"]
 [ext_resource type="Texture2D" uid="uid://do1bu07rimj8g" path="res://assets/zange.png" id="3_x8ymt"]
 [ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="4_wph28"]
 [ext_resource type="PackedScene" uid="uid://bvx0t6uoc7sl2" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
@@ -12,6 +13,10 @@ size = Vector2(268, 175.5)
 
 [node name="Minigame" type="Node2D" unique_id=1154409392]
 script = ExtResource("1_suo05")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=973364904]
+position = Vector2(961, 536)
+texture = ExtResource("2_x8ymt")
 
 [node name="Hand" type="Area2D" parent="." unique_id=1767583581]
 position = Vector2(1096, 4360)
