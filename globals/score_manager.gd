@@ -2,8 +2,8 @@ extends Node
 
 #Änderungwerte
 var scratch_score_per_movement = 0.1
-var remove_stick_score = 15
-var feed_food_score = 75
+var remove_stick_score = 60
+var feed_food_score = 40
 var dirt_clean_score = 50
 var answer_change = 200
 
