@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://beviupxr7gc7m"]
+
+[ext_resource type="Script" uid="uid://dx1wxy1axbfxo" path="res://scenes/dating_sim/dialogue/dialogue_scene.gd" id="1_fnfxh"]
+[ext_resource type="Resource" uid="uid://biv1qa25yab7x" path="res://assets/dialogue/test.dialogue" id="2_ag5m8"]
+
+[node name="DialogueScene" type="Control" unique_id=1716834809]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fnfxh")
+dialogue_resource = ExtResource("2_ag5m8")

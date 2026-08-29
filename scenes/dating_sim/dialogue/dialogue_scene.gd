@@ -1,13 +1,16 @@
-extends Control
+class_name DialogueScene extends Control
+
+signal dialogue_finished(dialogue_scene)
 
 enum Actor {ODYSSEUS, POLYPHEMUS}
 
 const ACTORS: Dictionary[String, Actor] = {
 	"Nobody": Actor.ODYSSEUS,
+	"Odysseus": Actor.ODYSSEUS,
 	"Polyphemus": Actor.POLYPHEMUS
 }
 
-const DIALOGUE_SCENE: PackedScene = preload("res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_screen.tscn")
+const DIALOGUE_SCREEN: PackedScene = preload("res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_screen.tscn")
 
 @export var dialogue_resource: DialogueResource
 
@@ -15,12 +18,14 @@ var dialogue: DialogueScreen
 var current_actor: Actor
 
 func _ready() -> void:
-	DialogueManager.set_default_balloon(DIALOGUE_SCENE)
+	DialogueManager.set_default_balloon(DIALOGUE_SCREEN)
 	dialogue = DialogueManager.show_dialogue_balloon(dialogue_resource)
 
 func _process(_delta: float) -> void:
 	if (dialogue):
 		process_dialogue()
+	else:
+		dialogue_finished.emit(self)
 
 
 func process_dialogue() -> void:
