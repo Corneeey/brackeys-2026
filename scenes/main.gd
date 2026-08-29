@@ -1,7 +1,7 @@
 extends Node
 
 const DIALOGUE_SCENE = preload("uid://beviupxr7gc7m")
-const MINIGAME_SCENE = preload("uid://bdt40p7g0phkq")
+const MINIGAME_SCENE = preload("uid://bo8bqu8f3i8lc")
 
 var game_steps = [
 	preload("res://assets/dialogue/dialogue_1.dialogue"),
@@ -30,7 +30,6 @@ func load_minigame() -> void:
 
 func _on_main_menu_game_started() -> void:
 	load_next()
-	$MainMenu.queue_free()
 
 func _on_dialogue_finished(dialogue_scene) -> void:
 	load_next()

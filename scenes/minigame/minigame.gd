@@ -67,3 +67,8 @@ func _process(_delta: float) -> void:
 	
 func _on_ate_food():
 	cursor_img.visible = false
+
+func _on_quit_minigame_pressed() -> void:
+	ScoreManager.finish_sheep()
+	SheepManager.is_sheep_minigame_open = false
+	self.queue_free()

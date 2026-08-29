@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://wi2ipk4iogs7" path="res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_screen.gd" id="1_oof6p"]
 [ext_resource type="Texture2D" uid="uid://cocrxfgt60ao4" path="res://assets/visualnovel/bg_vn.png" id="2_6ddjm"]
 [ext_resource type="Script" uid="uid://dbonunp7sahxp" path="res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_actor.gd" id="3_b67dx"]
-[ext_resource type="Texture2D" uid="uid://dlm2u7pp54fs" path="res://assets/visualnovel/o_listening.png" id="4_lfrb5"]
-[ext_resource type="Texture2D" uid="uid://dugaobovijht7" path="res://assets/visualnovel/o_talking.png" id="5_usqfi"]
-[ext_resource type="Texture2D" uid="uid://bjto26j2wqgpv" path="res://assets/visualnovel/p_listening.png" id="6_7rv8t"]
-[ext_resource type="Texture2D" uid="uid://3c81row64mue" path="res://assets/visualnovel/p_talking.png" id="7_t0k3n"]
+[ext_resource type="Texture2D" uid="uid://dl3js3no586bb" path="res://assets/visualnovel/o_dark_bg.png" id="4_6ddjm"]
+[ext_resource type="Texture2D" uid="uid://cw58fdi384742" path="res://assets/visualnovel/o_light_bg.png" id="5_b67dx"]
+[ext_resource type="Texture2D" uid="uid://bgdoq10unr4ft" path="res://assets/visualnovel/p_dark_bg.png" id="6_lfrb5"]
+[ext_resource type="Texture2D" uid="uid://duqjxb0kvespv" path="res://assets/visualnovel/p_light_bg.png" id="7_usqfi"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="8_yjw1u"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="9_hloga"]
+[ext_resource type="AudioStream" uid="uid://c02mduj5q07d5" path="res://assets/sfx/odysseus_voice/odysseus_voice_1.wav" id="10_6ddjm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -161,7 +162,7 @@ offset_top = -501.0
 offset_right = 856.0
 offset_bottom = 501.0
 grow_vertical = 2
-texture = ExtResource("5_usqfi")
+texture = ExtResource("4_6ddjm")
 
 [node name="OdysseusListening" type="TextureRect" parent="Balloon/Odysseus" unique_id=1706925874]
 layout_mode = 1
@@ -172,7 +173,7 @@ offset_top = -501.0
 offset_right = 856.0
 offset_bottom = 501.0
 grow_vertical = 2
-texture = ExtResource("4_lfrb5")
+texture = ExtResource("5_b67dx")
 
 [node name="Polyphemus" type="Control" parent="Balloon" unique_id=756643421 node_paths=PackedStringArray("talking_texture", "listening_texture")]
 unique_name_in_owner = true
@@ -198,7 +199,7 @@ offset_top = -500.0
 offset_bottom = 500.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("7_t0k3n")
+texture = ExtResource("6_lfrb5")
 
 [node name="PolyphemusListening" type="TextureRect" parent="Balloon/Polyphemus" unique_id=70335909]
 layout_mode = 1
@@ -212,7 +213,7 @@ offset_top = -500.0
 offset_bottom = 500.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("6_7rv8t")
+texture = ExtResource("7_usqfi")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1302081376]
 layout_mode = 1
@@ -291,6 +292,7 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
+stream = ExtResource("10_6ddjm")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

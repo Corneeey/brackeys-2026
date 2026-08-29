@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dugaobovijht7"
-path="res://.godot/imported/o_talking.png-076d6343b4eb550363687e6591aeab48.ctex"
+uid="uid://dl3js3no586bb"
+path="res://.godot/imported/o_dark_bg.png-67c6d15e13df54b2a56c477e8e72fb71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visualnovel/o_talking.png"
-dest_files=["res://.godot/imported/o_talking.png-076d6343b4eb550363687e6591aeab48.ctex"]
+source_file="res://assets/visualnovel/o_dark_bg.png"
+dest_files=["res://.godot/imported/o_dark_bg.png-67c6d15e13df54b2a56c477e8e72fb71.ctex"]
 
 [params]
 

@@ -2,6 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dx1wxy1axbfxo" path="res://scenes/dating_sim/dialogue/dialogue_scene.gd" id="1_fnfxh"]
 [ext_resource type="Resource" uid="uid://biv1qa25yab7x" path="res://assets/dialogue/test.dialogue" id="2_ag5m8"]
+[ext_resource type="Script" uid="uid://s21d3troml3i" path="res://scenes/dating_sim/dialogue/dialogue_audio/dialogue_audio.gd" id="3_ag5m8"]
+[ext_resource type="AudioStream" uid="uid://c02mduj5q07d5" path="res://assets/sfx/odysseus_voice/odysseus_voice_1.wav" id="4_g0fu7"]
+[ext_resource type="AudioStream" uid="uid://k4qcoo12cvv" path="res://assets/sfx/odysseus_voice/odysseus_voice_2.wav" id="5_y6kgr"]
+[ext_resource type="AudioStream" uid="uid://dhgm8wn3n0yo5" path="res://assets/sfx/odysseus_voice/odysseus_voice_3.wav" id="6_k4vy7"]
+[ext_resource type="AudioStream" uid="uid://cm007d2spf8ca" path="res://assets/sfx/odysseus_voice/odysseus_voice_4.wav" id="7_xqy8t"]
+[ext_resource type="AudioStream" uid="uid://cp4qoie7jbb6i" path="res://assets/sfx/odysseus_voice/odysseus_voice_5.wav" id="8_3n2u6"]
+[ext_resource type="AudioStream" uid="uid://duprg3gd1wr3p" path="res://assets/sfx/odysseus_voice/odysseus_voice_6.wav" id="9_3okhx"]
+[ext_resource type="AudioStream" uid="uid://bs0vxck55wewb" path="res://assets/sfx/odysseus_voice/odysseus_voice_7.wav" id="10_832bo"]
+[ext_resource type="AudioStream" uid="uid://dehapqxufu8mh" path="res://assets/sfx/cyclops_voice/cyclops_voice_1.wav" id="11_2wkrx"]
+[ext_resource type="AudioStream" uid="uid://bpjcly6umhgwl" path="res://assets/sfx/cyclops_voice/cyclops_voice_2.wav" id="12_i8jwa"]
+[ext_resource type="AudioStream" uid="uid://d0stmq22hylxc" path="res://assets/sfx/cyclops_voice/cyclops_voice_3.wav" id="13_ru8uc"]
 
 [node name="DialogueScene" type="Control" unique_id=1716834809]
 layout_mode = 3
@@ -12,3 +23,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fnfxh")
 dialogue_resource = ExtResource("2_ag5m8")
+
+[node name="OdysseusPlayer" type="AudioStreamPlayer" parent="." unique_id=1098106121]
+script = ExtResource("3_ag5m8")
+sound_bites = Array[AudioStream]([ExtResource("4_g0fu7"), ExtResource("5_y6kgr"), ExtResource("6_k4vy7"), ExtResource("7_xqy8t"), ExtResource("8_3n2u6"), ExtResource("9_3okhx"), ExtResource("10_832bo")])
+talking_speed = 0.16
+
+[node name="PolyphemusPlayer" type="AudioStreamPlayer" parent="." unique_id=1645492345]
+script = ExtResource("3_ag5m8")
+sound_bites = Array[AudioStream]([ExtResource("11_2wkrx"), ExtResource("12_i8jwa"), ExtResource("13_ru8uc")])
+talking_speed = 0.16

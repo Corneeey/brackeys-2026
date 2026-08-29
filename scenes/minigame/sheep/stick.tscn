@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dkcwsi5qeduas"]
+[gd_scene format=3 uid="uid://bj56g22omixdy"]
 
 [ext_resource type="Script" uid="uid://b2oedlgvtf4sr" path="res://scenes/minigame/sheep/stick.gd" id="1_ld7er"]
 [ext_resource type="Texture2D" uid="uid://dav55o28iq56g" path="res://assets/stick.webp" id="2_m8wbh"]

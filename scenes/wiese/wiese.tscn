@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bo8bqu8f3i8lc"]
+
+[ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="1_sc3nv"]
+[ext_resource type="Script" uid="uid://dwd8jaiy3cym2" path="res://scenes/wiese/wiese.gd" id="1_yom36"]
+
+[node name="Wiese" type="Node2D" unique_id=1148491611]
+script = ExtResource("1_yom36")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=387526276]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(952, 539.5)
+scale = Vector2(14.875, 8.5078125)
+texture = ExtResource("1_sc3nv")
