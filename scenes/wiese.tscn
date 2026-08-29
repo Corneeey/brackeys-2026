@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dwd8jaiy3cym2" path="res://scenes/wiese.gd" id="1_5i4ti"]
 [ext_resource type="Texture2D" uid="uid://duv7bs54abx58" path="res://assets/icon.svg" id="1_sc3nv"]
-[ext_resource type="PackedScene" uid="uid://7ut1qdou8lic" path="res://scenes/mini_sheep.tscn" id="2_5i4ti"]
 
 [node name="Wiese" type="Node2D" unique_id=1148491611]
 script = ExtResource("1_5i4ti")
@@ -12,15 +11,3 @@ modulate = Color(0, 1, 0, 1)
 position = Vector2(952, 539.5)
 scale = Vector2(14.875, 8.5078125)
 texture = ExtResource("1_sc3nv")
-
-[node name="MiniSheep4" parent="." unique_id=472881035 instance=ExtResource("2_5i4ti")]
-position = Vector2(523, 786)
-
-[node name="MiniSheep2" parent="." unique_id=2051629078 instance=ExtResource("2_5i4ti")]
-position = Vector2(1102, 554)
-
-[node name="MiniSheep" parent="." unique_id=1777786447 instance=ExtResource("2_5i4ti")]
-position = Vector2(333, 369)
-
-[node name="MiniSheep3" parent="." unique_id=473383685 instance=ExtResource("2_5i4ti")]
-position = Vector2(652, 150)

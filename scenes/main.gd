@@ -30,7 +30,6 @@ func load_minigame() -> void:
 
 func _on_main_menu_game_started() -> void:
 	load_next()
-	$MainMenu.queue_free()
 
 func _on_dialogue_finished(dialogue_scene) -> void:
 	load_next()

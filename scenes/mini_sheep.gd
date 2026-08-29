@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SHEEP_SCENE = preload("uid://cloubojbr302y")
+signal open_sheep
 
 @export var speed = 100
 
@@ -19,9 +19,12 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("drag") 
 			&& is_hovered 
 			&& !already_cared_for):
-		print("open sheep")
-		already_cared_for = true
-		self.modulate = Color(self.modulate, 0.5)
+				_open_sheep()
+
+func _open_sheep() -> void:
+	open_sheep.emit()
+	already_cared_for = true
+	self.modulate = Color(self.modulate, 0.5)
 
 func _physics_process(_delta):
 	self.velocity = global_position.direction_to(target) * speed
