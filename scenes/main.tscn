@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://bjaldegriam12"]
 
 [ext_resource type="PackedScene" uid="uid://df5v1pyor3f36" path="res://scenes/minigame/minigame.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bdt40p7g0phkq" path="res://scenes/wiese.tscn" id="2_sugp2"]
 
 [node name="Main" type="Node" unique_id=105591987]
 
 [node name="Minigame" parent="." unique_id=1154409392 instance=ExtResource("2_0wfyh")]
+visible = false
+
+[node name="Wiese" parent="." unique_id=1148491611 instance=ExtResource("2_sugp2")]
