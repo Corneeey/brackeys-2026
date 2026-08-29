@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bj56g22omixdy"]
 
 [ext_resource type="Script" uid="uid://b2oedlgvtf4sr" path="res://scenes/minigame/sheep/stick.gd" id="1_ld7er"]
-[ext_resource type="Texture2D" uid="uid://dav55o28iq56g" path="res://assets/stick.webp" id="2_m8wbh"]
+[ext_resource type="Texture2D" uid="uid://b1rwg3oxaugtf" path="res://assets/minigame/branches/branch_03.png" id="2_a0vid"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6wr7"]
+radius = 13.009612
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n54i3"]
 radius = 47.19692
@@ -9,6 +12,12 @@ height = 319.9947
 
 [node name="Stick" type="Area2D" unique_id=1770781443]
 script = ExtResource("1_ld7er")
+
+[node name="MiddleCollision" type="Area2D" parent="." unique_id=1189346427]
+
+[node name="MiddleCollision" type="CollisionShape2D" parent="MiddleCollision" unique_id=201100577]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_t6wr7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2137367200]
 position = Vector2(0, -7.6293945e-06)
@@ -19,4 +28,4 @@ shape = SubResource("CapsuleShape2D_n54i3")
 position = Vector2(1, 7.6293945e-06)
 rotation = -0.8293609
 scale = Vector2(0.5149112, 0.49144652)
-texture = ExtResource("2_m8wbh")
+texture = ExtResource("2_a0vid")

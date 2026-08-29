@@ -19,10 +19,18 @@ func _ready() -> void:
 	for i in sheep_count:
 		spawn_mini_sheep()
 
-func spawn_mini_sheep() -> void:
-	var mini_sheep = MINISHEEP_SCENE.instantiate()
+func _get_rect() -> Rect2:
+	var rect: Rect2 = $SheepArea/CollisionShape2D.shape.get_rect()
+	rect.position += $SheepArea/CollisionShape2D.global_position
+	return rect
+	
+
+func spawn_mini_sheep() -> Node:
+	var mini_sheep: Node = MINISHEEP_SCENE.instantiate()
 	mini_sheep.open_sheep.connect(_open_sheep)
+	mini_sheep.roaming_area = _get_rect()
 	add_child(mini_sheep)
+	return mini_sheep
 
 func _open_sheep() -> void:
 	add_child(MINIGAME_SCENE.instantiate())

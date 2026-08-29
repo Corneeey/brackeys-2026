@@ -73,6 +73,8 @@ var mutation_cooldown: Timer = Timer.new()
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
 
+@onready var speaker_box_left: PanelContainer = %SpeakerBoxLeft
+@onready var speaker_box_right: PanelContainer = %SpeakerBoxRight
 
 func _ready() -> void:
 	balloon.hide()

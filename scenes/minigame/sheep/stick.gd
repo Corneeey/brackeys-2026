@@ -8,6 +8,12 @@ var offset : Vector2
 var is_dissolving = false
 var alpha = 1
 
+@export var texture : Texture2D
+@onready var child_texture = $CollisionShape2D/Sprite2D
+
+func _ready() -> void:
+	child_texture.texture = texture
+
 func _process(delta: float) -> void:
 	if(is_draggable):
 		if(Input.is_action_just_pressed("drag")):
@@ -17,7 +23,7 @@ func _process(delta: float) -> void:
 			global_position = get_global_mouse_position() - offset
 		elif(Input.is_action_just_released("drag")):
 			DraggableManager.is_currently_dragging_something = false
-			if(!self.overlaps_area(SheepManager.sheep_body)):
+			if(!$MiddleCollision.overlaps_area(SheepManager.sheep_body)):
 				trigger_stick_removal()
 
 	if(is_dissolving):

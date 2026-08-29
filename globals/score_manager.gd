@@ -2,8 +2,8 @@ extends Node
 
 #Änderungwerte
 var scratch_score_per_movement = 0.1
-var remove_stick_score = 75
-var feed_food_score = 75
+var remove_stick_score = 60
+var feed_food_score = 40
 var dirt_clean_score = 50
 var answer_change = 200
 
@@ -25,9 +25,9 @@ var current_dirt_score = 0
 var score = 0
 
 func get_score_percentage():
-	var a = (min(score, max_score)/max_score) * 100
-	print(a,score)
-	return a
+	var score_percentage = min(score, max_score) * 100/max_score
+	print(score_percentage, score)
+	return score_percentage
 	
 
 func finish_sheep():

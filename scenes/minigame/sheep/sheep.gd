@@ -22,7 +22,6 @@ func _take_care_of_stick() -> void:
 	for child in get_children():
 		if child is Stick:
 			child.stick_removed.connect(stick_removed.emit)
-			
 			if(MinigameLevelManager.minigame_has_stoecker):
 				child.visible = true
 

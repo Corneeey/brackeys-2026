@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dav55o28iq56g"
-path="res://.godot/imported/stick.webp-695357ad83dcd4bfe284eeda6c2e8847.ctex"
+uid="uid://11331xxpm0uk"
+path="res://.godot/imported/leaves_02.png-856550a55ac5ab3237aa17c41986deb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stick.webp"
-dest_files=["res://.godot/imported/stick.webp-695357ad83dcd4bfe284eeda6c2e8847.ctex"]
+source_file="res://assets/minigame/branches/leaves_02.png"
+dest_files=["res://.godot/imported/leaves_02.png-856550a55ac5ab3237aa17c41986deb6.ctex"]
 
 [params]
 
