@@ -33,12 +33,16 @@ func _ready() -> void:
 func _connect_sheep_signals() -> void:
 	sheep.brushed.connect(_on_sheep_brushed)
 	sheep.petted.connect(_on_sheep_petted)
+	sheep.stick_removed.connect(_on_stick_removed)
 
 func _on_sheep_brushed() -> void:
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.BRUSHED)
 
 func _on_sheep_petted() -> void:
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.PETTED)
+
+func _on_stick_removed() -> void:
+	minigame_audio.play_audio(MinigameAudio.AudioEvent.STICK_REMOVED)
 
 func _on_hand_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on):
