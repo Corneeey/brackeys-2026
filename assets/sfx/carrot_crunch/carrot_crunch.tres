@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioBundle" format=3 uid="uid://cts8kdws8leo0"]
+
+[ext_resource type="Script" uid="uid://bojxyftafuv1a" path="res://types/audio_bundle.gd" id="1_imhr2"]
+[ext_resource type="AudioStream" uid="uid://b36mgwvx83amh" path="res://assets/sfx/carrot_crunch/carrot_crunch_1.wav" id="2_2twvn"]
+[ext_resource type="AudioStream" uid="uid://rd2rschmsssl" path="res://assets/sfx/carrot_crunch/carrot_crunch_2.wav" id="3_jqtly"]
+
+[resource]
+script = ExtResource("1_imhr2")
+sound_bites = Array[AudioStream]([ExtResource("2_2twvn"), ExtResource("3_jqtly")])
+metadata/_custom_type_script = "uid://bojxyftafuv1a"

@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://do1bu07rimj8g" path="res://assets/zange.png" id="3_x8ymt"]
 [ext_resource type="Texture2D" uid="uid://m5f6hs3j2hlb" path="res://assets/340.webp" id="4_wph28"]
 [ext_resource type="PackedScene" uid="uid://bvx0t6uoc7sl2" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
+[ext_resource type="Script" uid="uid://duavaw2ldoux3" path="res://scenes/minigame/minigame_audio.gd" id="7_x8ymt"]
+[ext_resource type="Script" uid="uid://scyn2qylqglk" path="res://scenes/minigame/sheep/sheep.gd" id="7_yn1os"]
+[ext_resource type="Script" uid="uid://bojxyftafuv1a" path="res://types/audio_bundle.gd" id="8_8k6tk"]
+[ext_resource type="Resource" uid="uid://dipogsgnd74di" path="res://assets/sfx/brush/brush.tres" id="9_8k6tk"]
+[ext_resource type="Resource" uid="uid://cts8kdws8leo0" path="res://assets/sfx/carrot_crunch/carrot_crunch.tres" id="9_r3185"]
+[ext_resource type="Resource" uid="uid://cjt8r343hldcl" path="res://assets/sfx/sheep/sheep.tres" id="12_ms23d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(268, 175.5)
@@ -72,6 +78,7 @@ shape = SubResource("RectangleShape2D_sugp2")
 [node name="Sheep" parent="." unique_id=196554312 instance=ExtResource("5_8k6tk")]
 position = Vector2(957.3104, 536.74365)
 scale = Vector2(1.4384458, 1.266642)
+script = ExtResource("7_yn1os")
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=749678793]
 visible = false
@@ -82,6 +89,14 @@ offset_left = 1623.0
 offset_top = 44.0
 offset_right = 1904.0
 offset_bottom = 169.0
+
+[node name="MinigameAudio" type="AudioStreamPlayer" parent="." unique_id=1696163578]
+script = ExtResource("7_x8ymt")
+audio_bundles = Dictionary[int, ExtResource("8_8k6tk")]({
+0: ExtResource("9_8k6tk"),
+1: ExtResource("9_r3185"),
+2: ExtResource("12_ms23d")
+})
 
 [connection signal="mouse_entered" from="Hand" to="." method="_on_hand_mouse_entered"]
 [connection signal="mouse_exited" from="Hand" to="." method="_on_hand_mouse_exited"]
