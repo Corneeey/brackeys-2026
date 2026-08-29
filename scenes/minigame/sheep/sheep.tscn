@@ -10,7 +10,6 @@ radius = 105.42215
 height = 210.8443
 
 [node name="Sheep" type="Sprite2D" unique_id=196554312]
-scale = Vector2(1.9161074, 1.3361344)
 texture = ExtResource("1_6qn06")
 script = ExtResource("2_nh37d")
 
