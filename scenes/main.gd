@@ -33,6 +33,7 @@ func load_dialogue(dialogue_resource: DialogueResource) -> void:
 	
 	$MusicPlayer.stream = DATING_SONG
 	$MusicPlayer.play()
+	$BellRinger.play()
 	
 	add_child(dialogue_scene)
 
@@ -50,6 +51,7 @@ func load_minigame(wiesen_data: WiesenData) -> void:
 	
 	$MusicPlayer.stream = SHEEP_SONG
 	$MusicPlayer.play()
+	$BellRinger.play()
 	
 	add_child(wiese)
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d2t75xso5ieoc" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://cqx1ynfb8130s" path="res://assets/music/menu_as_nolan_intended.mp3" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b0xdbd5kjd1g" path="res://scenes/main_menu/main_menu.tscn" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://qx4qxo8r7tjy" path="res://assets/sfx/Hubris_bell.mp3" id="4_jyhfs"]
 
 [node name="Main" type="Node" unique_id=105591987]
 script = ExtResource("1_jyhfs")
@@ -13,5 +14,10 @@ script = ExtResource("1_jyhfs")
 stream = ExtResource("3_jyhfs")
 autoplay = true
 bus = &"Music"
+
+[node name="BellRinger" type="AudioStreamPlayer" parent="." unique_id=1925971422]
+stream = ExtResource("4_jyhfs")
+volume_db = -8.145
+bus = &"Sound"
 
 [connection signal="game_started" from="MainMenu" to="." method="_on_main_menu_game_started"]
