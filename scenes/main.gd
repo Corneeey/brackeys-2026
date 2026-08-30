@@ -13,6 +13,7 @@ var game_steps = [
 	preload("res://assets/dialogue/dialogue_2.dialogue"),
 	preload("res://assets/wiesen/wiese_2.tres"),
 	preload("res://assets/dialogue/dialogue_3.dialogue"),
+	preload("res://assets/wiesen/wiese_3.tres"),
 	preload("res://assets/dialogue/dialogue_4.dialogue")
 ]
 
@@ -32,6 +33,7 @@ func load_dialogue(dialogue_resource: DialogueResource) -> void:
 	
 	$MusicPlayer.stream = DATING_SONG
 	$MusicPlayer.play()
+	$BellRinger.play()
 	
 	add_child(dialogue_scene)
 
@@ -49,6 +51,7 @@ func load_minigame(wiesen_data: WiesenData) -> void:
 	
 	$MusicPlayer.stream = SHEEP_SONG
 	$MusicPlayer.play()
+	$BellRinger.play()
 	
 	add_child(wiese)
 

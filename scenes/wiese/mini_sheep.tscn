@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bltby"]
 size = Vector2(140, 146.5)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sugp2"]
-blend_mode = 3
-
 [node name="MiniSheep" type="CharacterBody2D" unique_id=472881035]
 script = ExtResource("1_oe5ye")
 
@@ -20,7 +17,6 @@ position = Vector2(70, 73.75)
 shape = SubResource("RectangleShape2D_bltby")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1567831434]
-material = SubResource("CanvasItemMaterial_sugp2")
 position = Vector2(0, -0.75)
 texture = ExtResource("2_oe5ye")
 
