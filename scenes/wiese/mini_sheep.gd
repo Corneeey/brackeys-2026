@@ -8,18 +8,20 @@ const CLEAN_TEXTURE = preload("uid://b40ol8r770x4i")
 
 var roaming_area: Rect2
 
-var target
+var target : Vector2 = Vector2(0,0)
 var rng = RandomNumberGenerator.new()
 var is_hovered = false
 var already_cared_for = false
 var is_ready = false
 
 var last_location
+var start_location
 
 @onready var sprite = $Area2D/CollisionShape2D/Sprite2D
 
 func _ready() -> void:
 	global_position = get_random_location()
+	start_location = global_position
 	last_location = global_position
 	target = get_random_location()
 	print("Sheep ready at: ", global_position, " Target: ", target)
@@ -43,6 +45,12 @@ func clean_sheep() -> void:
 
 func _physics_process(_delta):
 	if !is_ready:
+		return
+	
+	if(global_position.y < 0):
+		global_position = start_location
+		if(target == Vector2(0,0)):
+			target = get_random_location()
 		return
 	
 	self.velocity = global_position.direction_to(target) * speed
