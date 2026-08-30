@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bcukoa831n6oq" path="res://scenes/minigame/minigame.gd" id="1_suo05"]
 [ext_resource type="Texture2D" uid="uid://dbbwjsshj3f4g" path="res://assets/minigame/bg_mg.png" id="2_x8ymt"]
 [ext_resource type="Texture2D" uid="uid://b5lryt04r7njm" path="res://assets/ui/mg_sheep/border_mg_sheep.png" id="3_yn1os"]
+[ext_resource type="Texture2D" uid="uid://x136pr2p5pk4" path="res://assets/minigame/mosaik_new.png" id="4_7monl"]
 [ext_resource type="Texture2D" uid="uid://udxaesqfjnd3" path="res://assets/ui/mg_sheep/buttons/button_hand_dark.png" id="4_al4os"]
 [ext_resource type="PackedScene" uid="uid://bvx0t6uoc7sl2" path="res://scenes/minigame/sheep/sheep.tscn" id="5_8k6tk"]
 [ext_resource type="Texture2D" uid="uid://c66adyagcrxn1" path="res://assets/ui/mg_sheep/buttons/button_hand_light.png" id="5_j6hl7"]
@@ -21,12 +22,23 @@
 [ext_resource type="Texture2D" uid="uid://bpxdjbmsj1e5v" path="res://assets/ui/mg_sheep/buttons/button_back_dark.png" id="14_7monl"]
 [ext_resource type="Resource" uid="uid://c3w4hx2r2mswy" path="res://assets/sfx/stick_remove/stick_remove.tres" id="18_al4os"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kollt"]
+blend_mode = 3
+
 [node name="Minigame" type="Node2D" unique_id=1154409392]
 script = ExtResource("1_suo05")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=973364904]
 position = Vector2(960, 540)
 texture = ExtResource("2_x8ymt")
+
+[node name="Sheep" parent="." unique_id=196554312 instance=ExtResource("5_8k6tk")]
+position = Vector2(927, 549)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=234926994]
+material = SubResource("CanvasItemMaterial_kollt")
+position = Vector2(960, 540)
+texture = ExtResource("4_7monl")
 
 [node name="Boder" type="Sprite2D" parent="." unique_id=292209058]
 position = Vector2(960, 540)
@@ -71,9 +83,6 @@ offset_bottom = 1083.0
 toggle_mode = true
 texture_normal = ExtResource("10_5h6cm")
 texture_pressed = ExtResource("11_4d6bl")
-
-[node name="Sheep" parent="." unique_id=196554312 instance=ExtResource("5_8k6tk")]
-position = Vector2(927, 488.00006)
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=749678793]
 visible = false
