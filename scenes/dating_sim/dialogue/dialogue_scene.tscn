@@ -39,3 +39,6 @@ bus = &"Sound"
 script = ExtResource("3_ag5m8")
 sound_bites = Array[AudioStream]([ExtResource("11_2wkrx"), ExtResource("12_i8jwa"), ExtResource("13_ru8uc"), ExtResource("14_ggdok"), ExtResource("15_75d2m"), ExtResource("16_f73x8"), ExtResource("17_fqdk3")])
 talking_speed = 0.16
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1446438942]
+bus = &"Sound"

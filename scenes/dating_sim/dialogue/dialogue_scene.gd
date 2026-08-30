@@ -12,6 +12,8 @@ const ACTORS: Dictionary[String, Actor] = {
 
 const DIALOGUE_SCREEN: PackedScene = preload("res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_screen.tscn")
 
+const STORM_AUDIO: AudioStream = preload("uid://byqklnwc2ldgn")
+
 @export var dialogue_resource: DialogueResource
 
 var dialogue: DialogueScreen
@@ -20,6 +22,10 @@ var current_actor: Actor
 func _ready() -> void:
 	DialogueManager.set_default_balloon(DIALOGUE_SCREEN)
 	dialogue = DialogueManager.show_dialogue_balloon(dialogue_resource)
+	
+	if(dialogue_resource.resource_path.contains("dialogue_2")):
+		$SFXPlayer.stream = STORM_AUDIO
+		$SFXPlayer.play()
 
 func _process(_delta: float) -> void:
 	if (dialogue):
