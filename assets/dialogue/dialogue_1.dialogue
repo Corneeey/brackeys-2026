@@ -4,10 +4,10 @@ Odysseus: Ahhhhhhhhhh! By Zeus, you are huge!
 Polyphemus: Wh-
 Polyphemus: Who are you?…
 Polyphemus: And what are you doing here?
-- Be open
+- >Be open
 	Odysseus: I’m … “Nobody”. The winds swept me onto your shores as I was making my way back home. I went looking for a meal and a place to rest when I found this cave.
 	$> ScoreManager.resolve_good_answer()
-- Be secretive
+- >Be secretive
 	Odysseus: I’m … “Nobody” and my business is my own. All I ask is a meal and a place to stay for the night.
 	$> ScoreManager.resolve_evil_answer()
 Polyphemus: You frightened me, little man, and you startled my flock. Stay here and care for my remaining sheep while I look for the rest. Do this for me and you’ll get your meal.

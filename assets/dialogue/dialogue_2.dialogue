@@ -3,34 +3,34 @@ Polyphemus: Thank you for taking care of my sheep. But I fear with this storm br
 Nobody: I’m sorry that I startled your flock, I hope you’ll be able to catch them all come sunrise. 
 Polyphemus: I hope so too, little man. May my father protect them through this storm. But.. oh, I haven’t even introduced myself. 
 Polyphemus: My name is Polyphemus, I am the shepherd of this here flock and your humble host through this storm.
-- Friendly introduction
+- >Friendly introduction
 	Nobody: Nobody: It’s a pleasure to meet you Polyphemus, I thank you for your hospitality. But if you allow me the question, who is your father?
 	$> ScoreManager.resolve_good_answer()
-- Ignore introduction
+- >Ignore introduction
 	Nobody: Who is your father?
 	$> ScoreManager.resolve_evil_answer()
-Polyphemus: Polyphemus: The mighty Poseidon of course! The Stormbringer and God of the sea!
-- Impressed
+Polyphemus: The mighty Poseidon of course! The Stormbringer and God of the sea!
+- >Impressed
 	Nobody: No wonder someone as striking as yourself such as yourself has an equally impressive father.
 	Polyphemus: You flatter me, little man.
 	$> ScoreManager.resolve_good_answer()
-- Doubt
+- >Doubt
 	Nobody: And my father is the almighty Zeus. *You laugh.* 
 	Polyphemus: Believe what you will but know that disrespecting the gods always has consequences.
 	$> ScoreManager.resolve_evil_answer()
 Polyphemus: But enough of that, I promised you a meal and you shall have one. A platter of my best cheeses and grapes.
-- Compliment
+- >Compliment
 	Nobody: *chomp chomp* By the gods, that is the best cheese I've ever eaten. You are a true master of your craft! But I, too, brought something with me, Polyphemus, a fine wine I acquired on my journey.
 	$> ScoreManager.resolve_good_answer()
-- Critique
+- >Critique
 	Nobody: *chomp chomp* I’ve had much better but everything tastes good if you pair it with this fine wine I’ve acquired on my journey. It is my gift for your hospitality.
 	$> ScoreManager.resolve_evil_answer()
 Polyphemus: Thank you for this gift. It is a much appreciated, little man. 
 Polyphemus: Let us feast and drink till the rosy fingers of dawn call us to work again. To us!
-- To us!
+- >To us!
 	Nobody: To us!
 	$> ScoreManager.resolve_good_answer()
-- To Ithaca!
+- >To Ithaca!
 	Nobody: To Ithaca, my home!
 	$> ScoreManager.resolve_evil_answer()
 Polyphemus: ...
@@ -39,10 +39,10 @@ Polyphemus: ZZZzzz
 Nobody: ZZZzzz
 Polyphemus: Wake up, little man! I plan to search for the rest of my flock. 
 Polyphemus: I would much appreciate it if you could tend to the needs of my sheep until I return.
-- Agree
+- >Agree
 	Nobody: Of course, big guy. 
 	$> ScoreManager.resolve_good_answer()
-- Reluctantly agree
+- >Reluctantly agree
 	Nobody: If I have too.
 	$> ScoreManager.resolve_evil_answer()
 => END

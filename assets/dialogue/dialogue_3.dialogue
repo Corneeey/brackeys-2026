@@ -1,27 +1,27 @@
 ~ start
 Polyphemus: I’m back, little man and I’ve brought not just the sheep but fruit too! They’ll be to your liking, I'm sure of that.
-- Thank him
+- >Thank him
 	Nobody: Thank you. Since I’ve arrived you’ve been nothing but kind to me.
 	Polyphemus: No, thank you, and not just for the care you put into tending the sheep but also for yesterday.
 	$> ScoreManager.resolve_good_answer()
-- I’ve had better
+- >I’ve had better
 	Nobody: I doubt that they’ll be better than the fruit on Ithaca.
 	Polyphemus: Maybe not but I still took much care in picking the sweetest, just for you. Anyway, thank you for yesterday!
 	$> ScoreManager.resolve_evil_answer()
 Polyphemus: It’s been an eternity since I've had such a nice evening. 
-- Agree
+- >Agree
 	Nobody: I enjoyed last evening too. To spend time with someone, who is as caring as you, was truly a pleasure.
 	Polyphemus: You are too nice, little man. You know...
 	$> ScoreManager.resolve_good_answer()
-- Arrogant
+- >Arrogant
 	Nobody: I know, I brighten up every gathering. Me and my men have spent countless nights just as good and often better.
 	$> ScoreManager.resolve_evil_answer()
 Polyphemus: I have something for you. A gift to show my gratitude if you will. It's my sweet ram, my favourite of the flock, but it is still missing. 
 Polyphemus: So if you would, for one last time, look after my sheep, I would go and search for him.
-- Readily agree
+- >Readily agree
 	Nobody: I think the sheep have warmed up to me, so it will be no problem.
 	$> ScoreManager.resolve_good_answer()
-- Again?
+- >Again?
 	Nobody: Again? I just did that.
 	$> ScoreManager.resolve_evil_answer()
 => END
