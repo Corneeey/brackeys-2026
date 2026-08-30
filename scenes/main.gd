@@ -32,7 +32,8 @@ func load_next() -> void:
 		load_story_beat(next)
 	elif next == "Ending":
 		load_ending()
-	else: push_error("Can't load next: " + next)
+	else:
+		get_tree().quit()
 
 func load_dialogue(dialogue_resource: DialogueResource) -> void:
 	var dialogue_scene: DialogueScene = DIALOGUE_SCENE.instantiate()
