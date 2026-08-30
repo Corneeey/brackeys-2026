@@ -21,6 +21,7 @@ func _ready() -> void:
 	global_position = get_random_location()
 	last_location = global_position
 	target = get_random_location()
+	print("Sheep ready at: ", global_position, " Target: ", target)
 	
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("drag") 
@@ -39,24 +40,23 @@ func clean_sheep() -> void:
 
 func _physics_process(_delta):
 	self.velocity = global_position.direction_to(target) * speed
-	
 	if global_position.distance_to(target) > 10:
 		var vel: Vector2 = velocity
 		rotation = vel.angle() + PI
 		
 		move_and_slide()
 		if get_slide_collision_count() > 0:
+			print("collision: change target ", self.name)
 			target = get_random_location()
 	else:
+		print("reached target: change target", self.name)
 		target = get_random_location()
 		last_location = global_position
 		
 func get_random_location():
-	var vector_random = Vector2(
+	return Vector2(
 		rng.randf_range(max(0, roaming_area.position.x), max(0, roaming_area.end.x)),
 		rng.randf_range(max(0, roaming_area.position.y), max(0, roaming_area.end.y)))
-	print(vector_random)
-	return vector_random
 
 func _on_area_2d_mouse_entered() -> void:
 	is_hovered = true
