@@ -112,13 +112,16 @@ func _on_main_menu_game_started() -> void:
 	load_next()
 
 func _on_wiese_finished(wiese) -> void:
+	print("-- Wiese finished...")
 	load_next()
 	wiese.queue_free()
 
 func _on_dialogue_finished(dialogue_scene) -> void:
+	print("-- Dialogue finished...")
 	load_next()
 	dialogue_scene.queue_free()
 
 func _on_story_beat_finished(story_beat) -> void:
+	print("-- Story beat finished...")
 	load_next()
 	story_beat.queue_free()
