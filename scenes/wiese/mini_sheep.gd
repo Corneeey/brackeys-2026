@@ -52,10 +52,11 @@ func _physics_process(_delta):
 		last_location = global_position
 		
 func get_random_location():
-	return Vector2(
-		rng.randf_range(roaming_area.position.x, roaming_area.end.x),
-		rng.randf_range(roaming_area.position.y, roaming_area.end.y)
-		)
+	var vector_random = Vector2(
+		rng.randf_range(max(0, roaming_area.position.x), max(0, roaming_area.end.x)),
+		rng.randf_range(max(0, roaming_area.position.y), max(0, roaming_area.end.y)))
+	print(vector_random)
+	return vector_random
 
 func _on_area_2d_mouse_entered() -> void:
 	is_hovered = true
