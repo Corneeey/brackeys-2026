@@ -12,6 +12,7 @@ var target
 var rng = RandomNumberGenerator.new()
 var is_hovered = false
 var already_cared_for = false
+var is_ready = false
 
 var last_location
 
@@ -22,6 +23,8 @@ func _ready() -> void:
 	last_location = global_position
 	target = get_random_location()
 	print("Sheep ready at: ", global_position, " Target: ", target)
+	
+	is_ready = true
 	
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("drag") 
@@ -39,6 +42,9 @@ func clean_sheep() -> void:
 		sprite.texture = CLEAN_TEXTURE
 
 func _physics_process(_delta):
+	if !is_ready:
+		return
+	
 	self.velocity = global_position.direction_to(target) * speed
 	if global_position.distance_to(target) > 10:
 		var vel: Vector2 = velocity
