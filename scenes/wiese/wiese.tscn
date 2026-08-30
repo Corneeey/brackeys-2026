@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bmhtj3gtlj4jr" path="res://assets/ui/mg_grass/button_next_light.png" id="6_odajp"]
 [ext_resource type="Texture2D" uid="uid://db88ug034bbeq" path="res://assets/ui/mg_grass/button_next_dark.png" id="7_odajp"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t6wr7"]
+normal = Vector2(0, 1)
+distance = -1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yom36"]
 size = Vector2(1520, 575)
 
@@ -16,6 +20,11 @@ blend_mode = 3
 
 [node name="Wiese" type="Node2D" unique_id=1148491611]
 script = ExtResource("1_yom36")
+
+[node name="TopBorder" type="StaticBody2D" parent="." unique_id=408006615]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBorder" unique_id=1114601270]
+shape = SubResource("WorldBoundaryShape2D_t6wr7")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=387526276]
 position = Vector2(952, 539.5)
