@@ -18,6 +18,7 @@ var game_steps = [
 	preload("res://assets/wiesen/wiese_3.tres"),
 	preload("res://assets/dialogue/dialogue_4.dialogue"),
 	"Ending",
+	preload("res://assets/visualnovel/storyBeats/credits.png")
 ]
 
 func load_next() -> void:

@@ -4,7 +4,7 @@ Nobody: I’m sorry that I startled your flock, I hope you’ll be able to catch
 Polyphemus: I hope so too, little man. May my father protect them through this storm. But.. oh, I haven’t even introduced myself. 
 Polyphemus: My name is Polyphemus, I am the shepherd of this here flock and your humble host through this storm.
 - >Friendly introduction
-	Nobody: Nobody: It’s a pleasure to meet you Polyphemus, I thank you for your hospitality. But if you allow me the question, who is your father?
+	Nobody: It’s a pleasure to meet you Polyphemus, I thank you for your hospitality. But if you allow me the question, who is your father?
 	$> ScoreManager.resolve_good_answer()
 - >Ignore introduction
 	Nobody: Who is your father?
