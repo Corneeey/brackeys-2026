@@ -13,13 +13,16 @@ var rng = RandomNumberGenerator.new()
 var is_hovered = false
 var already_cared_for = false
 
+var last_location
+
 @onready var sprite = $Area2D/CollisionShape2D/Sprite2D
 
 func _ready() -> void:
 	global_position = get_random_location()
+	last_location = global_position
 	target = get_random_location()
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("drag") 
 			&& is_hovered 
 			&& !already_cared_for):
@@ -30,12 +33,11 @@ func _open_sheep() -> void:
 		open_sheep.emit()
 		clean_sheep()
 
-
 func clean_sheep() -> void:
 		already_cared_for = true
 		sprite.texture = CLEAN_TEXTURE
 
-func _physics_process(_delta):	
+func _physics_process(_delta):
 	self.velocity = global_position.direction_to(target) * speed
 	
 	if global_position.distance_to(target) > 10:
@@ -43,9 +45,12 @@ func _physics_process(_delta):
 		rotation = vel.angle() + PI
 		
 		move_and_slide()
+		if get_slide_collision_count() > 0:
+			target = get_random_location()
 	else:
 		target = get_random_location()
-
+		last_location = global_position
+		
 func get_random_location():
 	return Vector2(
 		rng.randf_range(roaming_area.position.x, roaming_area.end.x),
