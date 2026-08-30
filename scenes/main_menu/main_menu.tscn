@@ -2,8 +2,15 @@
 
 [ext_resource type="Script" uid="uid://ca2y2ktruljoo" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="AudioStream" uid="uid://crwmwde0l73kc" path="res://assets/sfx/menu_click/menu_click_1.wav" id="2_0ebjn"]
+[ext_resource type="Texture2D" uid="uid://x50uofswshcs" path="res://assets/ui/menues/main_menu/bg_mainmenu.png" id="2_thkx5"]
 [ext_resource type="AudioStream" uid="uid://bfy0e2t0bp21c" path="res://assets/sfx/menu_click/menu_click_3.wav" id="3_ob46e"]
+[ext_resource type="Texture2D" uid="uid://m68kcskl0sd1" path="res://assets/ui/menues/main_menu/button_start_mainmenu_base.png" id="3_x2yjq"]
+[ext_resource type="Texture2D" uid="uid://5wqu6p8pijte" path="res://assets/ui/menues/main_menu/button_start_mainmenu_hover.png" id="4_lqpn7"]
 [ext_resource type="PackedScene" uid="uid://cytbxmliq4386" path="res://scenes/main_menu/settings_popup.tscn" id="4_uqeha"]
+[ext_resource type="Texture2D" uid="uid://b8he0ybhe8c78" path="res://assets/ui/menues/main_menu/button_sound_mainmenu_base.png" id="5_qel0l"]
+[ext_resource type="Texture2D" uid="uid://bjflkq6wqy1gn" path="res://assets/ui/menues/main_menu/button_sound_mainmenu_hover.png" id="6_rrgl4"]
+[ext_resource type="Texture2D" uid="uid://846ntf2rleiv" path="res://assets/ui/menues/main_menu/button_quit_mainmenu_base.png" id="10_lqpn7"]
+[ext_resource type="Texture2D" uid="uid://btcw5b5dhc14s" path="res://assets/ui/menues/main_menu/button_quit_mainmenu_hover.png" id="11_qel0l"]
 
 [node name="MainMenu" type="Control" unique_id=704655114]
 layout_mode = 3
@@ -14,18 +21,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsom3")
 
-[node name="Title" type="Label" parent="." unique_id=360292114]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -210.0
-offset_top = 80.0
-offset_right = 210.0
-offset_bottom = 168.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
-text = "Trust Nobody"
+[node name="Background" type="TextureRect" parent="." unique_id=54401532]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_thkx5")
 
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=344482030]
 layout_mode = 1
@@ -40,17 +40,26 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 0
 
-[node name="PlayButton" type="Button" parent="Buttons" unique_id=1378403966]
+[node name="PlayButton" type="TextureButton" parent="Buttons" unique_id=1010073969]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Play"
+texture_normal = ExtResource("3_x2yjq")
+texture_hover = ExtResource("4_lqpn7")
 
-[node name="SettingsButton" type="Button" parent="Buttons" unique_id=1542179320]
+[node name="SettingsButton" type="TextureButton" parent="Buttons" unique_id=1899899063]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Settings"
+texture_normal = ExtResource("5_qel0l")
+texture_hover = ExtResource("6_rrgl4")
+
+[node name="QuitButton" type="TextureButton" parent="." unique_id=612510238]
+layout_mode = 0
+offset_left = 1571.0
+offset_top = 230.0
+offset_right = 1702.0
+offset_bottom = 340.0
+texture_normal = ExtResource("10_lqpn7")
+texture_hover = ExtResource("11_qel0l")
 
 [node name="SettingsPopup" parent="." unique_id=1543002235 instance=ExtResource("4_uqeha")]
 unique_name_in_owner = true
@@ -69,3 +78,4 @@ bus = &"Sound"
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="mouse_entered" from="Buttons/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

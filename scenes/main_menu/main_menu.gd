@@ -20,3 +20,6 @@ func _on_play_button_mouse_entered() -> void:
 
 func _on_settings_button_mouse_entered() -> void:
 	hover_player.play()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

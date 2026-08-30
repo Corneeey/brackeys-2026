@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwd8jaiy3cym2" path="res://scenes/wiese/wiese.gd" id="1_yom36"]
 [ext_resource type="Texture2D" uid="uid://c8eajid1d8ft7" path="res://assets/minigame/bg_mg_untextured.png" id="2_pgb5i"]
-[ext_resource type="Texture2D" uid="uid://cxah13gbrsbvs" path="res://assets/minigame/mosaik.png" id="3_cepum"]
+[ext_resource type="Texture2D" uid="uid://x136pr2p5pk4" path="res://assets/minigame/mosaik_new.png" id="3_i7ahc"]
 [ext_resource type="Texture2D" uid="uid://dkr382x5hxcvi" path="res://assets/minigame/fence.png" id="4_cepum"]
 [ext_resource type="Texture2D" uid="uid://dhvxa4to72ru8" path="res://assets/ui/mg_grass/border_mg_sheep_new.png" id="5_odajp"]
 [ext_resource type="Texture2D" uid="uid://bmhtj3gtlj4jr" path="res://assets/ui/mg_grass/button_next_light.png" id="6_odajp"]
@@ -28,14 +28,14 @@ position = Vector2(0, -32)
 position = Vector2(955, 532.5)
 shape = SubResource("RectangleShape2D_yom36")
 
-[node name="Mosaik" type="Sprite2D" parent="." unique_id=95873293]
-material = SubResource("CanvasItemMaterial_yom36")
-position = Vector2(952, 539.5)
-texture = ExtResource("3_cepum")
-
 [node name="Fence" type="Sprite2D" parent="." unique_id=1362869854]
 position = Vector2(954, 496)
 texture = ExtResource("4_cepum")
+
+[node name="Mosaik" type="Sprite2D" parent="." unique_id=95873293]
+material = SubResource("CanvasItemMaterial_yom36")
+position = Vector2(952, 539.5)
+texture = ExtResource("3_i7ahc")
 
 [node name="UI" type="Control" parent="." unique_id=331716544]
 custom_minimum_size = Vector2(1920, 1080)
