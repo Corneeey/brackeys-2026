@@ -13,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 var is_hovered = false
 var already_cared_for = false
 var is_ready = false
+var is_evil = true
 
 var last_location
 var start_location
@@ -56,6 +57,7 @@ func _physics_process(_delta):
 			print("sent sheep to", target)
 		return
 	
+	is_evil = false
 	self.velocity = position.direction_to(target).normalized() * speed
 	if position.distance_to(target) > 10:
 		var vel: Vector2 = velocity
