@@ -46,10 +46,10 @@ func _physics_process(_delta):
 		
 		move_and_slide()
 		if get_slide_collision_count() > 0:
-			print("collision: change target ", self.name)
+			#print("collision: change target ", self.name)
 			target = get_random_location()
 	else:
-		print("reached target: change target", self.name)
+		#print("reached target: change target", self.name)
 		target = get_random_location()
 		last_location = global_position
 		
