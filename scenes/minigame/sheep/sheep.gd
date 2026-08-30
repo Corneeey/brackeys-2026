@@ -33,8 +33,6 @@ func _on_sheep_body_mouse_exited() -> void:
 	
 func _on_sheep_mouth_mouse_entered() -> void:
 	if(ToolManager.active_tool == ToolManager.Tool.KAROTTE):
-		ScoreManager.current_food_score += ScoreManager.feed_food_score
-		ToolManager.active_tool = ToolManager.Tool.NONE
 		ToolManager.ate_food.emit()
 
 func _input(event: InputEvent) -> void:

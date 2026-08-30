@@ -9,7 +9,9 @@ var is_hovering_anything = false
 @onready var mouse_texture_brush : Texture2D = load("res://assets/minigame/tools/brush.png")
 @onready var mouse_texture_hand : Texture2D = load("res://assets/minigame/tools/hand.png")
 @onready var mouse_texture_zange : Texture2D = load("res://assets/minigame/tools/comb.png")
-@onready var mouse_texture_karrote : Texture2D = load("res://assets/minigame/tools/carrot_01.png")
+@onready var mouse_texture_karrote_01 : Texture2D = load("res://assets/minigame/tools/carrot_01.png")
+@onready var mouse_texture_karrote_02 : Texture2D = load("res://assets/minigame/tools/carrot_02.png")
+@onready var mouse_texture_karrote_03 : Texture2D = load("res://assets/minigame/tools/carrot_03.png")
 
 @onready var minigame_audio: MinigameAudio = $MinigameAudio
 
@@ -70,7 +72,7 @@ func _on_brush_button_toggled(toggled_on: bool) -> void:
 
 func _on_food_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on):
-		cursor_img.texture = mouse_texture_karrote
+		cursor_img.texture = mouse_texture_karrote_01
 		hand_tool.button_pressed = false
 		brush_tool.button_pressed = false
 		zange_tool.button_pressed = false
@@ -96,11 +98,16 @@ func _on_comb_button_toggled(toggled_on: bool) -> void:
 		
 func _on_ate_food():
 	minigame_audio.play_audio(MinigameAudio.AudioEvent.CARROT_FED)
-	cursor_img.visible = false
-	food_tool.button_pressed = false
-	ScoreManager.current_food_score += ScoreManager.feed_food_score
-	ToolManager.active_tool = ToolManager.Tool.NONE
-	do_cursor_stuff(false)
+	if(cursor_img.texture == mouse_texture_karrote_01):
+		cursor_img.texture = mouse_texture_karrote_02
+	elif(cursor_img.texture == mouse_texture_karrote_02):
+		cursor_img.texture = mouse_texture_karrote_03
+	else:
+		cursor_img.visible = false
+		food_tool.button_pressed = false
+		ScoreManager.current_food_score += ScoreManager.feed_food_score
+		ToolManager.active_tool = ToolManager.Tool.NONE
+		do_cursor_stuff(false)
 
 func _on_quit_minigame_pressed() -> void:
 	ScoreManager.finish_sheep()
