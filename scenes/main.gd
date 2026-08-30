@@ -13,6 +13,7 @@ var game_steps = [
 	preload("res://assets/dialogue/dialogue_2.dialogue"),
 	preload("res://assets/wiesen/wiese_2.tres"),
 	preload("res://assets/dialogue/dialogue_3.dialogue"),
+	preload("res://assets/wiesen/wiese_3.tres"),
 	preload("res://assets/dialogue/dialogue_4.dialogue")
 ]
 
