@@ -45,6 +45,7 @@ func finish_sheep():
 	current_food_score = 0
 	current_remove_stick_score = 0
 	current_scratch_score = 0
+	ToolManager.active_tool = ToolManager.Tool.NONE
 	
 func resolve_evil_answer() -> void:
 	score -= answer_change
