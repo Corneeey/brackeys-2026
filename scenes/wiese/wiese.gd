@@ -32,8 +32,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0.25).timeout
 
 func _process(_delta: float) -> void:
-	if (!sheep.any(_is_evil) && big_evil_body):
-		big_evil_body.queue_free()
+	#if (!sheep.any(_is_evil) && big_evil_body):
+		#big_evil_body.queue_free()
+	pass
 
 func _is_evil(singular_sheep) -> bool:
 	return singular_sheep.is_evil
