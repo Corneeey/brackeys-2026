@@ -16,7 +16,7 @@ size = Vector2(1520, 575)
 blend_mode = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1en1a"]
-size = Vector2(1521, 574)
+size = Vector2(1668, 710)
 
 [node name="Wiese" type="Node2D" unique_id=1148491611]
 script = ExtResource("1_yom36")
@@ -84,7 +84,7 @@ texture_hover = ExtResource("7_odajp")
 script = ExtResource("8_i7ahc")
 
 [node name="CollisionShapeImproper" type="CollisionShape2D" parent="BigEvilBody" unique_id=581174990]
-position = Vector2(953.5, 498)
+position = Vector2(956, 501)
 shape = SubResource("RectangleShape2D_1en1a")
 debug_color = Color(0.9760315, 0, 0.4185053, 0.41960785)
 
