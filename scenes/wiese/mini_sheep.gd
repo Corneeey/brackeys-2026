@@ -21,7 +21,6 @@ var start_location
 @onready var sprite = $Area2D/CollisionShape2D/Sprite2D
 
 func _ready() -> void:
-	position = get_random_location()
 	start_location = position
 	last_location = position
 	target = get_random_location()

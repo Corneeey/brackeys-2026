@@ -12,9 +12,14 @@ const MINIGAME_SCENE = preload("res://scenes/minigame/minigame.tscn")
 @export var sheep_count = 4
 @export var clean_sheep_count = 2
 
-var sheep = []
-
-@onready var big_evil_body = $BigEvilBody
+var starting_positions = [
+	Vector2(0, 0),
+	Vector2(128, 0),
+	Vector2(128*2, 0),
+	Vector2(0, 128),
+	Vector2(0, 128 * 2),
+	Vector2(128, 128)
+	]
 
 func _ready() -> void:
 	MinigameLevelManager.minigame_has_dreck = minigame_has_dreck
@@ -22,14 +27,13 @@ func _ready() -> void:
 	MinigameLevelManager.minigame_has_stoecker = minigame_has_stoecker
 	MinigameLevelManager.minigame_has_streicheln = minigame_has_streicheln
 	for i in sheep_count:
-		sheep.append(spawn_mini_sheep())
+		var mini_sheep = spawn_mini_sheep()
+		mini_sheep.position = starting_positions.pop_front()
 	
 	for i in clean_sheep_count:
 		var mini_sheep := spawn_mini_sheep()
-		sheep.append(mini_sheep)
 		mini_sheep.clean_sheep()
-	
-	await get_tree().create_timer(0.25).timeout
+		mini_sheep.position = starting_positions.pop_front()
 
 func _process(_delta: float) -> void:
 	#if (!sheep.any(_is_evil) && big_evil_body):
