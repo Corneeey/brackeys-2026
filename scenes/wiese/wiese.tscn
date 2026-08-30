@@ -7,10 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhvxa4to72ru8" path="res://assets/ui/mg_grass/border_mg_sheep_new.png" id="5_odajp"]
 [ext_resource type="Texture2D" uid="uid://bmhtj3gtlj4jr" path="res://assets/ui/mg_grass/button_next_light.png" id="6_odajp"]
 [ext_resource type="Texture2D" uid="uid://db88ug034bbeq" path="res://assets/ui/mg_grass/button_next_dark.png" id="7_odajp"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t6wr7"]
-normal = Vector2(0, 1)
-distance = -1.0
+[ext_resource type="Script" uid="uid://bbfiwqhocrc6r" path="res://scenes/wiese/big_evil_body.gd" id="8_i7ahc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yom36"]
 size = Vector2(1520, 575)
@@ -18,13 +15,11 @@ size = Vector2(1520, 575)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yom36"]
 blend_mode = 3
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1en1a"]
+size = Vector2(1533.5, 584.5)
+
 [node name="Wiese" type="Node2D" unique_id=1148491611]
 script = ExtResource("1_yom36")
-
-[node name="TopBorder" type="StaticBody2D" parent="." unique_id=408006615]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBorder" unique_id=1114601270]
-shape = SubResource("WorldBoundaryShape2D_t6wr7")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=387526276]
 position = Vector2(952, 539.5)
@@ -84,5 +79,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_odajp")
 texture_hover = ExtResource("7_odajp")
+
+[node name="BigEvilBody" type="CharacterBody2D" parent="." unique_id=2008548467]
+script = ExtResource("8_i7ahc")
+
+[node name="CollisionShapeImproper" type="CollisionShape2D" parent="BigEvilBody" unique_id=581174990]
+position = Vector2(958.25, 498.25)
+shape = SubResource("RectangleShape2D_1en1a")
+debug_color = Color(0.9760315, 0, 0.4185053, 0.41960785)
 
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
