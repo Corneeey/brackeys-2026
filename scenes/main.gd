@@ -22,7 +22,9 @@ var game_steps = [
 ]
 
 func load_next() -> void:
+	print("Loading scene " + str(11 - game_steps.size()) + "...")
 	var next = game_steps.pop_front()
+	print("- Got scene: " + next.resource_path)
 	
 	if next is DialogueResource:
 		load_dialogue(next)
@@ -34,8 +36,11 @@ func load_next() -> void:
 		load_ending()
 	else:
 		get_tree().quit()
+	
+	print("Finished loading scene... Now I have " + str(get_child_count() - 2) + " children")
 
 func load_dialogue(dialogue_resource: DialogueResource) -> void:
+	print("- Loading dialogue...")
 	var dialogue_scene: DialogueScene = DIALOGUE_SCENE.instantiate()
 	dialogue_scene.dialogue_finished.connect(_on_dialogue_finished)
 	dialogue_scene.dialogue_resource = dialogue_resource
@@ -47,6 +52,7 @@ func load_dialogue(dialogue_resource: DialogueResource) -> void:
 	add_child(dialogue_scene)
 
 func load_minigame(wiesen_data: WiesenData) -> void:
+	print("- Loading minigame...")
 	var wiese: Wiese = MINIGAME_SCENE.instantiate()
 	
 	wiese.minigame_has_dreck = wiesen_data.minigame_has_dreck
@@ -65,6 +71,7 @@ func load_minigame(wiesen_data: WiesenData) -> void:
 	add_child(wiese)
 
 func load_story_beat(visuals) -> void:
+	print("- Loading story beat...")
 	var story_beat = STORY_BEAT_SCENE.instantiate()
 	
 	story_beat.story_beat_finished.connect(_on_story_beat_finished)
@@ -73,6 +80,7 @@ func load_story_beat(visuals) -> void:
 	add_child(story_beat)
 
 func load_ending():
+	print("- Loading ending...")
 	var visuals: Texture
 	var music: AudioStream
 	
