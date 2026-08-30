@@ -3,15 +3,21 @@ Polyphemus: I know you only came here for a meal and a warm place for the night,
 if ScoreManager.get_score_percentage() <= ScoreManager.BAD_ENDING_THRESHOLD
 	#hostile Thoughts
 	Nobody: (He fell not just for my trick, but for me it seems. If I stay just a bit longer I might be able to steal his flock for me and my men.)
+	Nobody: I know what I have to do.
+	- >Trick Polyphemus
+		$> ScoreManager.score = 0
 elif ScoreManager.get_score_percentage() >= ScoreManager.GOOD_ENDING_THRESHOLD
 	#positive thoughts
-	Nobody:(Never in my life have I felt as I have felt here on this island with Polyphemus and his sheep. I want to stay here with my big guy.. with my gentle giant.)
+	Nobody: (Never in my life have I felt as I have felt here on this island with Polyphemus and his sheep. I want to stay here with my big guy.. with my gentle giant.)
+	Nobody: I know what I have to do.
+	- >Stay with Polyphemus
+		$> ScoreManager.score = 9999
 else
 	#neutral Thoughts
 	Nobody: (I’m unsure what to do. On the one hand I could steal his flock and continue home with my men, but on the other hand he has been nothing but kind to me. I could just stay with him.)
-Nobody: What should I do?
-- >Stay with Polyphemus
-	$> ScoreManager.score = 76
-- >Trick Polyphemus
-	$> ScoreManager.score = 24
+	Nobody: What should I do?
+	- >Stay with Polyphemus
+		$> ScoreManager.score = 9999
+	- >Trick Polyphemus
+		$> ScoreManager.score = 0
 => END
