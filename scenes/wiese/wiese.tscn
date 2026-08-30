@@ -22,11 +22,14 @@ position = Vector2(952, 539.5)
 texture = ExtResource("2_pgb5i")
 
 [node name="SheepArea" type="Area2D" parent="." unique_id=988710979]
-position = Vector2(960, 540)
+position = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SheepArea" unique_id=1075125490]
-position = Vector2(1, -51)
+position = Vector2(955, 532.5)
 shape = SubResource("RectangleShape2D_yom36")
+
+[node name="SheepAnchor" type="Node2D" parent="SheepArea" unique_id=470059322]
+position = Vector2(960, 540)
 
 [node name="Fence" type="Sprite2D" parent="." unique_id=1362869854]
 position = Vector2(954, 496)

@@ -21,10 +21,10 @@ var start_location
 @onready var sprite = $Area2D/CollisionShape2D/Sprite2D
 
 func _ready() -> void:
-	start_location = position
-	last_location = position
+	start_location = global_position
+	last_location = global_position
 	target = get_random_location()
-	print("Sheep ready at: ", position, " Target: ", target)
+	print("Sheep ready at: ", global_position, " Target: ", target)
 	
 	is_ready = true
 	
@@ -47,19 +47,19 @@ func _physics_process(_delta):
 	if !is_ready:
 		return
 	
-	is_evil = position.y < 0
+	is_evil = global_position.y < 0
 	
 	if(is_evil):
-		print("Position is evil ", position)
-		position = start_location
-		print("Set position to start ", position)
+		print("global_position is evil ", global_position)
+		global_position = start_location
+		print("Set global_position to start ", global_position)
 		if(target == Vector2(0,0)):
 			target = get_random_location()
 			print("sent sheep to", target)
 		return
 	
-	self.velocity = position.direction_to(target).normalized() * speed
-	if position.distance_to(target) > 10:
+	self.velocity = global_position.direction_to(target).normalized() * speed
+	if global_position.distance_to(target) > 10:
 		var vel: Vector2 = velocity
 		rotation = vel.angle() + PI
 		
@@ -70,7 +70,7 @@ func _physics_process(_delta):
 	else:
 		#print("reached target: change target", self.name)
 		target = get_random_location()
-		last_location = position
+		last_location = global_position
 		
 func get_random_location():
 	return Vector2(

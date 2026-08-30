@@ -53,7 +53,7 @@ func spawn_mini_sheep() -> Node:
 	var mini_sheep: Node = MINISHEEP_SCENE.instantiate()
 	mini_sheep.open_sheep.connect(_open_sheep)
 	mini_sheep.roaming_area = _get_rect()
-	$SheepArea.add_child(mini_sheep)
+	$SheepArea/SheepAnchor.add_child(mini_sheep)
 	return mini_sheep
 
 func _open_sheep() -> void:
