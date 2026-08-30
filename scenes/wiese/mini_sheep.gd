@@ -48,7 +48,9 @@ func _physics_process(_delta):
 	if !is_ready:
 		return
 	
-	if(position.y < 0):
+	is_evil = position.y < 0
+	
+	if(is_evil):
 		print("Position is evil ", position)
 		position = start_location
 		print("Set position to start ", position)
@@ -57,7 +59,6 @@ func _physics_process(_delta):
 			print("sent sheep to", target)
 		return
 	
-	is_evil = false
 	self.velocity = position.direction_to(target).normalized() * speed
 	if position.distance_to(target) > 10:
 		var vel: Vector2 = velocity
