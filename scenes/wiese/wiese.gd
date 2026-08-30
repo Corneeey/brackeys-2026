@@ -23,6 +23,8 @@ func _ready() -> void:
 	for i in clean_sheep_count:
 		var mini_sheep := spawn_mini_sheep()
 		mini_sheep.clean_sheep()
+	
+	await get_tree().create_timer(0.25).timeout
 
 func _get_rect() -> Rect2:
 	var rect: Rect2 = $SheepArea/CollisionShape2D.shape.get_rect()
