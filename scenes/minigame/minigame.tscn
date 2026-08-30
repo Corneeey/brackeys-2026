@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bb0te00c6uelv" path="res://assets/ui/mg_sheep/buttons/button_carrot_dark.png" id="10_5h6cm"]
 [ext_resource type="Texture2D" uid="uid://6j3jdwi1pkrr" path="res://assets/ui/mg_sheep/buttons/button_carrot_light.png" id="11_4d6bl"]
 [ext_resource type="Resource" uid="uid://cjt8r343hldcl" path="res://assets/sfx/sheep/sheep.tres" id="12_ms23d"]
+[ext_resource type="Texture2D" uid="uid://dmx60885xmiov" path="res://assets/ui/mg_sheep/buttons/button_back_light.png" id="13_b7ekc"]
+[ext_resource type="Texture2D" uid="uid://bpxdjbmsj1e5v" path="res://assets/ui/mg_sheep/buttons/button_back_dark.png" id="14_7monl"]
 [ext_resource type="Resource" uid="uid://c3w4hx2r2mswy" path="res://assets/sfx/stick_remove/stick_remove.tres" id="18_al4os"]
 
 [node name="Minigame" type="Node2D" unique_id=1154409392]
@@ -77,11 +79,13 @@ position = Vector2(927, 488.00006)
 visible = false
 scale = Vector2(0.7, 0.7)
 
-[node name="QuitMinigame" type="Button" parent="." unique_id=1753550150]
-offset_left = 1623.0
-offset_top = 44.0
-offset_right = 1904.0
-offset_bottom = 169.0
+[node name="QuitMinigame" type="TextureButton" parent="." unique_id=1729656521]
+offset_left = 112.0
+offset_top = 923.0
+offset_right = 263.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("13_b7ekc")
+texture_hover = ExtResource("14_7monl")
 
 [node name="MinigameAudio" type="AudioStreamPlayer" parent="." unique_id=1696163578]
 bus = &"Sound"

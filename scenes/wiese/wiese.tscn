@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c8eajid1d8ft7" path="res://assets/minigame/bg_mg_untextured.png" id="2_pgb5i"]
 [ext_resource type="Texture2D" uid="uid://cxah13gbrsbvs" path="res://assets/minigame/mosaik.png" id="3_cepum"]
 [ext_resource type="Texture2D" uid="uid://dkr382x5hxcvi" path="res://assets/minigame/fence.png" id="4_cepum"]
+[ext_resource type="Texture2D" uid="uid://dhvxa4to72ru8" path="res://assets/ui/mg_grass/border_mg_sheep_new.png" id="5_odajp"]
+[ext_resource type="Texture2D" uid="uid://bmhtj3gtlj4jr" path="res://assets/ui/mg_grass/button_next_light.png" id="6_odajp"]
+[ext_resource type="Texture2D" uid="uid://db88ug034bbeq" path="res://assets/ui/mg_grass/button_next_dark.png" id="7_odajp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yom36"]
 size = Vector2(1520, 575)
@@ -19,6 +22,7 @@ position = Vector2(952, 539.5)
 texture = ExtResource("2_pgb5i")
 
 [node name="SheepArea" type="Area2D" parent="." unique_id=988710979]
+position = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SheepArea" unique_id=1075125490]
 position = Vector2(955, 532.5)
@@ -29,18 +33,47 @@ material = SubResource("CanvasItemMaterial_yom36")
 position = Vector2(952, 539.5)
 texture = ExtResource("3_cepum")
 
-[node name="BackButton" type="Button" parent="." unique_id=1681728941]
-offset_left = 1387.0
-offset_top = 9.0
-offset_right = 1908.0
-offset_bottom = 84.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 48
-text = "Done caring for Sheep"
-
 [node name="Fence" type="Sprite2D" parent="." unique_id=1362869854]
-position = Vector2(954, 530)
+position = Vector2(954, 496)
 texture = ExtResource("4_cepum")
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[node name="UI" type="Control" parent="." unique_id=331716544]
+custom_minimum_size = Vector2(1920, 1080)
+custom_maximum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Border" type="TextureRect" parent="UI" unique_id=749451013]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("5_odajp")
+
+[node name="BackButton" type="TextureButton" parent="UI" unique_id=473037760]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -263.0
+offset_top = -157.0
+offset_right = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_odajp")
+texture_hover = ExtResource("7_odajp")
+
+[connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
