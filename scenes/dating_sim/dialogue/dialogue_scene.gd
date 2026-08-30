@@ -24,8 +24,10 @@ func _ready() -> void:
 	dialogue = DialogueManager.show_dialogue_balloon(dialogue_resource)
 	
 	if(dialogue_resource.resource_path.contains("dialogue_2")):
-		$SFXPlayer.stream = STORM_AUDIO
-		$SFXPlayer.play()
+		$AnimationPlayer/SFXPlayer.stream = STORM_AUDIO
+		$AnimationPlayer/SFXPlayer.play()
+		$AnimationPlayer.play("fade_in")
+
 
 func _process(_delta: float) -> void:
 	if (dialogue):
