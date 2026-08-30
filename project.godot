@@ -14,7 +14,6 @@ config/name="Trust Nobody"
 config/version="1.0"
 run/main_scene="uid://bjaldegriam12"
 config/features=PackedStringArray("4.7", "Forward Plus")
-boot_splash/show_image=false
 config/icon="uid://duv7bs54abx58"
 
 [audio]
@@ -40,7 +39,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
