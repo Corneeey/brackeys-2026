@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Brackeys 2026"
+config/name="Trust Nobody"
+config/version="1.0"
 run/main_scene="uid://bjaldegriam12"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://assets/icon.svg"
+boot_splash/show_image=false
+config/icon="uid://duv7bs54abx58"
 
 [audio]
 
@@ -36,6 +38,7 @@ runtime/balloon_path="res://scenes/dating_sim/dialogue/dialogue_screen/dialogue_
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
