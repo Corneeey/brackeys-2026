@@ -19,7 +19,7 @@ Polyphemus: It’s been an eternity since I've had such a nice evening.
 Polyphemus: I have something for you. A gift to show my gratitude if you will. It's my sweet ram, my favourite of the flock, but it is still missing. 
 Polyphemus: So if you would, for one last time, look after my sheep, I would go and search for him.
 - Readily agree
-	Nobody: I Nobody: I think the sheep have warmed up to me, so it will be no problem.
+	Nobody: I think the sheep have warmed up to me, so it will be no problem.
 	$> ScoreManager.resolve_good_answer()
 - Again?
 	Nobody: Again? I just did that.
