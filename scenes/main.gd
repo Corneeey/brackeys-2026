@@ -71,19 +71,32 @@ func load_story_beat(visuals) -> void:
 	add_child(story_beat)
 
 func load_ending():
-	var visuals
+	var visuals: Texture
+	var music: AudioStream
 	
-	if (ScoreManager.score <= ScoreManager.BAD_ENDING_THRESHOLD):
+	print(ScoreManager.get_score_percentage())
+	
+	if (ScoreManager.get_score_percentage() <= ScoreManager.BAD_ENDING_THRESHOLD):
 		visuals = load("res://assets/visualnovel/storyBeats/bad_ending.png")
-	elif (ScoreManager.score >= ScoreManager.GOOD_ENDING_THRESHOLD):
+		music = load("res://assets/music/bad_ending.mp3")
+	elif (ScoreManager.get_score_percentage() >= ScoreManager.GOOD_ENDING_THRESHOLD):
 		visuals = load("res://assets/visualnovel/storyBeats/good_ending.png")
+		music = load("res://assets/music/good_ending.mp3")
 	
 	var story_beat = STORY_BEAT_SCENE.instantiate()
 	
 	story_beat.story_beat_finished.connect(_on_story_beat_finished)
+	story_beat.change_music.connect(_on_story_beat_music_change_signal)
+	
 	story_beat.visuals = visuals
+	story_beat.music = music
 	
 	add_child(story_beat)
+
+func _on_story_beat_music_change_signal(music: AudioStream) -> void:
+	$MusicPlayer.stream = music
+	$MusicPlayer.play()
+	$BellRinger.play()
 
 func _on_main_menu_game_started() -> void:
 	load_next()
