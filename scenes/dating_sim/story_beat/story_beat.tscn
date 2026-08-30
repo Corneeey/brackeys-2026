@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cil3hka4svl4x"]
+
+[ext_resource type="Texture2D" uid="uid://pavf7bad8p5a" path="res://assets/visualnovel/storyBeats/opening.png" id="1_70dtp"]
+[ext_resource type="Script" uid="uid://fixsvdgkltfe" path="res://scenes/dating_sim/story_beat/story_beat.gd" id="2_rkoqn"]
+
+[node name="StoryBeat" type="TextureRect" unique_id=119147900]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_70dtp")
+script = ExtResource("2_rkoqn")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

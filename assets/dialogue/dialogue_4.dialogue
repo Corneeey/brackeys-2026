@@ -1,9 +1,9 @@
 ~ start
 Polyphemus: I know you only came here for a meal and a warm place for the night, little man, but it would hurt my heart to see you leave already. So please consider staying, maybe even just for a couple of days.
-if ScoreManager.get_score_percentage() <= 25
+if ScoreManager.get_score_percentage() <= ScoreManager.BAD_ENDING_THRESHOLD
 	#hostile Thoughts
 	Nobody: (He fell not just for my trick, but for me it seems. If I stay just a bit longer I might be able to steal his flock for me and my men.)
-elif ScoreManager.get_score_percentage() >= 75
+elif ScoreManager.get_score_percentage() >= ScoreManager.GOOD_ENDING_THRESHOLD
 	#positive thoughts
 	Nobody:(Never in my life have I felt as I have felt here on this island with Polyphemus and his sheep. I want to stay here with my big guy.. with my gentle giant.)
 else

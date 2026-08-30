@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xbjkg2ionhuf"]
+
+[ext_resource type="Script" uid="uid://fixsvdgkltfe" path="res://scenes/dating_sim/story_beat/story_beat.gd" id="1_teei4"]
+
+[node name="Ending" type="TextureRect" unique_id=1767227029]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_teei4")
+metadata/_custom_type_script = "uid://fixsvdgkltfe"

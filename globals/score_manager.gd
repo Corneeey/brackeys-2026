@@ -1,5 +1,8 @@
 extends Node
 
+const BAD_ENDING_THRESHOLD: int = 25
+const GOOD_ENDING_THRESHOLD: int = 75
+
 #Änderungwerte
 var scratch_score_per_movement = 0.1
 var remove_stick_score = 60
